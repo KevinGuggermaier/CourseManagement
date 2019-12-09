@@ -44,7 +44,7 @@ function getNewForm(data){
                         <input class="inputField" type="text" id="Floor" placeholder="Stockwerk" name="Floor" required> 
 
                         <p class="inputHeader">Adresse</p> 
-                        <input class="inputField" type="text" name="input" id="Location" placeholder="Ort" name="City" required> 
+                        <input class="inputField" type="text" id="Location" placeholder="Ort" name="City" required> 
                         <input class="inputField" type="text" id="LocationStreet" placeholder="Straße" name="Address"> 
                         <input class="inputField" type="text" id="LocationPlz" placeholder="Plz" name="Postcode"> 
 

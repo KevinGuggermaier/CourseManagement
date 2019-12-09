@@ -106,11 +106,13 @@ const server = http.createServer((request, response) => {
         //console.log("SAVE ;) ", form)
         form.parse(request, (err, data, files) => {
             console.log('data', data);
-
-            dbModule.insert(db,data).then(
+            const t  = dbModule.open_db();
+            dbModule.save(t,data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
-                error => send(response, 404, {'content-type':'text/plain'}, error));
+                error => send(response, 404, {'content-type':'text/plain'}, error.toString())
+            )
+            dbModule.close_db(t);
         });
     } else if(URLparams.includes("images")) {
         sendFile(response, request)
@@ -135,14 +137,13 @@ const server = http.createServer((request, response) => {
         )
     }
     else {
-        send(response, 200,{ 'content-type': 'text/html' }, getForm());
+        send(response, 200, {'content-type': 'text/html'}, getForm());
         /*dbModule.getOverview(db).then(
             data => {
                 send(response, 200,{ 'content-type': 'text/html' }, getForm());
             },
             error => send(response, 404,{"content-type": "text/plain"},error),
         );*/
-
 
     }
 

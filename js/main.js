@@ -358,7 +358,6 @@ function test(){
 }
 
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
-document.getElementById("btnInsertData").addEventListener("click", insertData);
 
 //document.getElementById("location").addEventListener("change", test);
 
