@@ -8,6 +8,16 @@
     font-size: 0.9em;
 }
 
+#page404 {
+    width: auto;
+    margin-top: 48vh;
+    text-align: center;
+}
+
+#page404 h1 {
+    font-size: 1.6em;
+}
+
 @media screen {
     input[type=text], select {
       width: 80%;
@@ -37,10 +47,9 @@
         width: 15%;
     }
 
-    #btnPrint:hover, #btnInsertData:hover, #btnShowFieldInsertData:hover {
+    .btn:hover {
       background-color: #bababa;
       color: white;
-      font-weight: bold;
     }
 
     .lineHeaders {

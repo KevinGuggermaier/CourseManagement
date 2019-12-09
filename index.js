@@ -13,16 +13,43 @@ const getForm = require("./views/form");
 const getNewForm = require("./views/new");
 
 
-const page404 = `<!DOCTYPE html>
-<html>
-    <head>
-        <title>Seite wurde nicht gefunden</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Seite nicht gefunden!</h1>
-    </body>
-</html>`;
+function getPage404() {
+    const page404 = `<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Seite wurde nicht gefunden</title>
+            <link href="css/main.css" rel="stylesheet" type="text/css"/>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <div id="page404">
+                <h1>Auf der Seite ist ein Fehler aufgetreten</h1>
+                <br>
+                <a href="/"><button id="back" class="btn">Zurück zu Home</button></a><br> 
+            </div>
+        </body>
+    </html>`;
+    return page404;
+}
+
+function getPageDuplicat() {
+    const pageDuplicat = `<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Duplikat</title>
+            <link href="css/main.css" rel="stylesheet" type="text/css"/>
+            <meta charset="utf-8">
+        </head>
+        <body>
+            <div id="page404">
+                <h1>Der Raum den du einfügen wolltest existiert bereits!</h1>
+                <br>
+                <a href="/"><button id="back" class="btn">Zurück zu Home</button></a><br> 
+            </div>
+        </body>
+    </html>`;
+    return pageDuplicat;
+}
 
 
 const server = http.createServer((request, response) => {
@@ -31,8 +58,8 @@ const server = http.createServer((request, response) => {
     const db = dbModule.open_db();
 
     console.log(request.url)
-    if(URLparams.includes("delete")) {
-
+    if(URLparams.includes("testPage")) {
+        send(response,200,{'content-type':'text/html'}, getPageDuplicat())
     } else if(URLparams.includes("edit") && !isNaN(URLparams[2])) {
         console.log("edit :)");
         console.log(URLparams[2])
@@ -41,7 +68,8 @@ const server = http.createServer((request, response) => {
             dbModule.getOverviewRoomById(db, URLparams[2]).then(
                 data => {
                     send(response, 200, {'content-type': 'text/html'}, getNewForm(data))
-                }
+                },
+                error => send(response, 404, {'content-type': 'text/html'}, getPage404())
             )
         }
 
@@ -57,7 +85,7 @@ const server = http.createServer((request, response) => {
             dbModule.save(t,data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
-                error => send(response, 404, {'content-type':'text/plain'}, error.toString())
+                error => send(response, 404, {'content-type':'text/plain'}, getPageDuplicat())
             );
 
             dbModule.close_db(t);
