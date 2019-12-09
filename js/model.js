@@ -63,15 +63,18 @@ async function select_all_from_table(db, table_name) {
 
 
 function insert(db, data) {
-    return new Promise.all([insertRoom(db, data),insertMaintenace(db, data)]);
+    console.log("[Insert]");
+    let insertionRoom = insertRoom(db,data);
+    let insertionMaintenance = insertMaintenace(db,data);
+    return Promise.all([insertionRoom,insertionMaintenance]);
 }
 
 function insertRoom(db, data) {
     console.log("insert new room.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postalcode) Values(?, ?, ?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postcode) Values (?, ?, ?, ?, ?, ?, ?)';
         console.log(data);
-        db.all(query, [data.ShortCut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postalcode],(error, results) => {
+        db.all(query, [data.Shortcut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -85,7 +88,7 @@ function insertRoom(db, data) {
 function insertMaintenace(db, data) {
     console.log("insert new maintenance activity.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values(?, ?, ?, ?)';
+        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
         console.log(data);
         db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
             if (error) {
@@ -207,5 +210,11 @@ module.exports = {
     open_db,
     close_db,
     getOverviewRoom,
-    insert
+    save(db,data) {
+        if(!data.R_id) {
+            return insert(db,data)
+        } else {
+            return update(db,data)
+        }
+    }
 }

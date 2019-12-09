@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS Maintenance_Activity;
 
 CREATE TABLE IF NOT EXISTS Maintenance_Activity (
 	MA_Id			INTEGER PRIMARY KEY AUTOINCREMENT,
-	Date							DateTime		NOT NULL,
+	Date							VARCHAR		NOT NULL,
 	Remark							VARCHAR(150)	NOT NULL,
        Description							VARCHAR(20)	 NOT NULL,
 	R_Id				INTEGER,
