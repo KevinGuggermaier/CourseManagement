@@ -86,7 +86,6 @@ const server = http.createServer((request, response) => {
     }*/
     else if(URLparams.includes("save") && request.method === "POST") {
         const form = new formidable.IncomingForm();
-        //console.log("SAVE ;) ", form)
         form.parse(request, (err, data, files) => {
             console.log('data', data);
             const t  = dbModule.open_db();
@@ -94,7 +93,7 @@ const server = http.createServer((request, response) => {
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
                 error => send(response, 404, {'content-type':'text/plain'}, error.toString())
-            )
+            );
             dbModule.close_db(t);
         });
     } else if(URLparams.includes("images")) {

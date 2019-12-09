@@ -1,6 +1,6 @@
 function getNewForm(data){
     console.log(data)
-    data = data[0]
+
     if(data == null) {
         data = {
             R_id : '',
@@ -15,6 +15,8 @@ function getNewForm(data){
             Date : '',
             Remark : ''
         };
+    }else{
+        data = data[0];
     }
 
     let header = "Neuen Raum einfügen";
@@ -36,6 +38,7 @@ function getNewForm(data){
                 <div id="courseManagement"> 
                     <h1>${header}</h1> 
                      <div id="insertData"> 
+                    
                     <form action="/save" method="POST">
                         <br class="inputHeader">
                         <input type="hidden" id="R_Id" value="${data.R_id}"/>
