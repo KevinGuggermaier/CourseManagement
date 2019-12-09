@@ -1,7 +1,7 @@
 // Declare variables
 
 let local_json_path = './resources/Test_data.json';
-let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung"];
+let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung","Action"];
 let json_object = null;
 /*
 let model = require('./model');
