@@ -9,7 +9,7 @@ let model = require('./model');
 const http = require('http');
 //#######################################################
 
-
+*/
 
 // Event listener
 window.addEventListener("load", function () {
@@ -24,10 +24,16 @@ window.addEventListener("load", function () {
         console.log("PROGRESS:", Http.responseText)
         jsonObj = Http.responseText//.replace("[", "");
         //jsonObj = jsonObj.replace("]", "");
-        jsonObj = JSON.parse(jsonObj)
-        console.log(jsonObj.Name)
+        let str =""
+        let json_object = JSON.parse(jsonObj)
+        if(json_object.length === 0) {
+            str = "Die Datei fürs Einlesen enthält keine Daten :(";
+        }
+        //console.log(json_object);
+        fill_table(json_object,str);
+        /*console.log(jsonObj.Name)
         document.getElementById("LocationStreet").value = jsonObj.Address;
-        document.getElementById("LocationPlz").value = jsonObj.Postcode;
+        document.getElementById("LocationPlz").value = jsonObj.Postcode;*/
     }
     Http.send();
    document.getElementById("btnPrint").addEventListener("click", print_window);
@@ -62,7 +68,7 @@ function do_json_web_request(url){
 }*/
 
 
-/*// Fill table with data
+/*// Fill table with data */
 function fill_table(json_object,else_str) {
 	document.getElementById("RoomOverviewTable").innerHTML = "";
     let table = document.getElementById("RoomOverviewTable");
@@ -113,18 +119,18 @@ function fill_table(json_object,else_str) {
         table.rows[i].setAttribute('class',"row");
         i--;
     }
-}*/
+}
 
-/*// Create header
+/*// Create header */
 function create_table_header(row) {
     let columnCnt = 0;
     for(let header in headers) {
         let cell = row.insertCell(columnCnt++);
         cell.innerHTML = "<b class='headerTitles'>" + headers[header] + "</b>";
     }
-}*/
+}
 
-/*function iterate_through_sub_object(obj) {
+function iterate_through_sub_object(obj) {
     let objString = "";
     if (obj instanceof Object) {
         for (let property in obj) {
@@ -135,7 +141,7 @@ function create_table_header(row) {
         }
     }
     return objString;
-}*/
+}
 
 async function on_search(){
 
