@@ -26,6 +26,20 @@ async function initialize_database(db) {
     });
 }
 
+function getOverviewRoom(db){
+    return new Promise((resolve, reject) => {
+        const query = "Select * from Room";
+        db.all(query, (error, result) => {
+            if(error){
+                reject(error);
+            }else {
+                resolve(result);
+            }
+        })
+    })
+}
+
+/*
 async function getElementFromLocationWithId(db, id) {
     //console.log("Select * from location where Location_Id = " + id);
     return new Promise((resolve, reject) => {
@@ -90,9 +104,10 @@ async function select_all_from_table(db, table_name) {
             })
         }
     });*/
-}
+/*}
 
 
+*/
 async function getOverview(db) {
     console.log("Get View RoomOverview");
 
@@ -114,7 +129,7 @@ async function getOverview(db) {
         });
 
 }
-
+/*
 async function getOverviewById(db, id) {
     console.log("Get View RoomOverviewById");
     console.log("ID from model.js", id)
@@ -335,7 +350,7 @@ function updateMainDesc(db, room_data, id) {
         }
         console.log(res);
     });*/
-}
+/*}
 
 
 function update_room(db, room_data, id) {
@@ -360,7 +375,7 @@ function delete_room(db, shortcut) {
         }
         console.log(res);
     });
-}
+}*/
 
 function close_db(db) {
     db.close((err) => {
@@ -373,17 +388,8 @@ function close_db(db) {
 
 module.exports = {
     initialize_database,
-    select_all_from_table,
-    getElementFromLocationWithId,
-    insert_new_room,
-    update_room,
     open_db,
     close_db,
-    delete_room,
-    getOverviewById,
+    getOverviewRoom,
     getOverview,
-    getMaintenanceOverview,
-    insert_new_maintenance_activity,
-    getIdFromInsertRoom,
-    updateMainDesc
 };

@@ -9,49 +9,27 @@ let model = require('./model');
 const http = require('http');
 //#######################################################
 
-let db = model.open_db();
-//model.initialize_database(db);
-
-const server = http.createServer((request, response) => {
-    const parts = request.url.split('/');
-
-    if (parts.includes("select_all_from_table")) {
-        /!* // Test insert
-        let room_data = ['G.9999.1', 9999, 1, 1, 1];
-        model.insert_new_room(db, room_data);
-        *!/
-        model.select_all_from_table(db, 'Room');
-        /!* // Test delete
-        model.delete_room(db, 'K.210.2')
-        *!/
-        /!* // Test update
-        let room_data = [999, 3, 1, 1, 'G.100.2'];
-        model.select_all_from_table(db, 'Room');
-        model.update_room(db, room_data);
-        model.select_all_from_table(db, 'Room');
-        *!/
-        /!*model.getAll(db).then(
-            rooms => {
-                send(response, rooms);
-            },
-            error => console.log(error),
-        ); *!/
-    } else if (parts.includes('close_db')) {
-        model.close_db(db);
-    }
-});
-
-// server is now listening to specific port
-server.listen(8080, () =>
-    console.log('Server and Notes Application is listening to http://localhost:8080'),
-);
-*/
 
 
 // Event listener
 window.addEventListener("load", function () {
    document.getElementById("else_text").style.display = "none";
    //do_json_web_request(local_json_path);
+    let jsonObj = "";
+
+    const Http = new XMLHttpRequest();
+    const url='http://localhost:8080/getJsonRoom';
+    Http.open("GET", url);
+    Http.onprogress = function () {
+        console.log("PROGRESS:", Http.responseText)
+        jsonObj = Http.responseText//.replace("[", "");
+        //jsonObj = jsonObj.replace("]", "");
+        jsonObj = JSON.parse(jsonObj)
+        console.log(jsonObj.Name)
+        document.getElementById("LocationStreet").value = jsonObj.Address;
+        document.getElementById("LocationPlz").value = jsonObj.Postcode;
+    }
+    Http.send();
    document.getElementById("btnPrint").addEventListener("click", print_window);
 });
 

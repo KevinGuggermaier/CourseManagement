@@ -167,7 +167,19 @@ const server = http.createServer((request, response) => {
     }
     else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js") {
         sendFile(response, request, 'utf8');
-    } else {
+
+    }else if(URLparams.includes("getJsonRoom") && request.method === "GET") {
+        dbModule.getOverviewRoom(db).then(
+            data => {
+                console.log(data)
+                response.writeHead(200, {"Content-Type": "application/json"});
+                response.write(JSON.stringify(data)); // You Can Call Response.write Infinite Times BEFORE response.end
+                response.end();
+            },
+            error => console.log(error),
+        )
+    }
+    else {
         dbModule.getOverview(db).then(
             data => {
                 send(response, 200,{ 'content-type': 'text/html' }, getForm());
