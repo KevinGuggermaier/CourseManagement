@@ -66,14 +66,15 @@ const server = http.createServer((request, response) => {
         }*/
 
     } else if(URLparams.includes("insertNewRoom")) {
-        selectionForNewRoom(db).then(
+        send(response,200,{ 'content-type' : 'text/html'}, getNewForm());
+        /*selectionForNewRoom(db).then(
             data => {
                 //console.log("Data for selection.", data, "\nData1", data[0], "\nData2", data[1], "\nData3", data[2]);
                 send(response, 200, {'content-type': 'text/html'}, getNewForm(data[1], data[0], data[2]));
             },
             error => {
                 send(response, 200, {'content-type': 'text/html'}, getNewForm(null, null, null));
-            });
+            });*/
 
     } /*else if(URLparams.includes("location")){
         let id = URLparams.slice(URLparams.length-1, URLparams.length);
@@ -116,7 +117,7 @@ const server = http.createServer((request, response) => {
             redirect(response, {'content-type': 'text/plain'}, "/");
         });
 
-    }
+    }*/
     /*else if(URLparams.includes("new") && request.method === "POST") {
         console.log("new")
         let body = [];
