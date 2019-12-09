@@ -81,6 +81,7 @@ function insert(db, data) {
 
 function insertRoom(db, data) {
     console.log("insert new room.");
+    data.Shortcut = data.Shortcut.toString().toUpperCase();
     return new Promise((resolve, reject) => {
         const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postcode) Values (?, ?, ?, ?, ?, ?, ?)';
         console.log(data);
@@ -97,9 +98,9 @@ function insertRoom(db, data) {
 
 function insertMaintenace(db, data) {
     console.log("insert new maintenance activity.");
+    data.Shortcut = data.Shortcut.toString().toUpperCase();
     const query1 = "Select * from Maintenance_Activity Where Shortcut = " + '"' + data.Shortcut + '"';
     let request = null;
-
     db.all(query1, (err, res) => {
         if (err) {
             console.log(err.message);
