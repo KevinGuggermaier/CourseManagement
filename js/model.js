@@ -1,4 +1,4 @@
-const db_file_path = '../db/rooms2.db';
+const db_file_path = '../db/rooms.db';
 const db_script_path = '../db/basic-db-script-01.sql';
 
 function open_db() {
@@ -15,6 +15,7 @@ function open_db() {
     return db;
 }
 
+/*
 async function initialize_database(db) {
     let fs = require('fs');
     await fs.readFile(db_script_path, 'utf8', async function(err, contents) {
@@ -24,7 +25,7 @@ async function initialize_database(db) {
             console.log("results " + rows);
         });
     });
-}
+}*/
 
 function getOverviewRoom(db){
     return new Promise((resolve, reject) => {
@@ -39,97 +40,6 @@ function getOverviewRoom(db){
     })
 }
 
-/*
-async function getElementFromLocationWithId(db, id) {
-    //console.log("Select * from location where Location_Id = " + id);
-    return new Promise((resolve, reject) => {
-        const query = "SELECT * FROM location where Location_Id = " + id;
-
-          db.all(query, (error, results) => {
-            if (error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                //console.log(results);
-                resolve(results);
-            }
-        });
-
-    });
-}
-async function select_all_from_table(db, table_name) {
-    try{
-
-        const response = await db.all(query, (error, results) => {
-            if(error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                //console.log(results);
-                resolve(results);
-                return Promise(response.data);
-            }
-        });
-
-
-    }catch{
-
-    }
-
-    console.log("Select all from " + table_name);
-    return new Promise((resolve, reject) => {
-        const query = "SELECT * FROM " + table_name;
-
-        db.all(query, (error, results) => {
-            if(error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                //console.log(results);
-                resolve(results);
-            }
-        });
-
-    });
-
-
-    /*db.all("SELECT * FROM " + table_name, function(err, rows) {
-
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(rows);
-            rows.forEach(function (row) {
-                console.log(row);
-            })
-        }
-    });*/
-/*}
-
-
-*/
-async function getOverview(db) {
-    console.log("Get View RoomOverview");
-
-    return new Promise((resolve, reject) => {
-        const query = "SELECT Room.Id, Room.Shortcut, Room.Room_Number, Room.Floor_Number, Roomtype.Roomtype , Location.Address, Location.Name, Location.Postcode FROM " +
-        "Room INNER JOIN Location ON Room.Location_Id == Location.Location_Id " +
-        "INNER JOIN Roomtype ON Room.Roomtype_Id == Roomtype.Roomtype_Id ";
-
-            db.all(query, (error, results) => {
-                if(error) {
-                    //console.log(error);
-                    reject(error);
-                } else {
-                    //console.log(results);
-                    resolve(results);
-                }
-            });
-
-        });
-
-}
-/*
 async function getOverviewById(db, id) {
     console.log("Get View RoomOverviewById");
     console.log("ID from model.js", id)
@@ -157,10 +67,10 @@ async function getOverviewById(db, id) {
 
 }
 
-async function getMaintenanceOverview(db) {
+function getMaintenanceOverview(db) {
     console.log("Get Maintenance Activity Overview")
 
-    return await new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
        const query = "SELECT Maintenance_Activity.Room_Id, Maintenance_Activity.Room_Shortcut, Maintenance_Activity.Remark, Maintenance_Activity.Date, Maintenance_Description.Description " +
            "FROM Maintenance_Activity JOIN Maintenance_Description ON Maintenance_Activity.Maintenance_Description_Id = Maintenance_Description.Maintenance_Description_Id";
 
@@ -176,80 +86,36 @@ async function getMaintenanceOverview(db) {
     });
 }
 
-function insert_new_room(db, data) {
+function insert(db, data) {
+    return new Promise.all([insertRoom(db, data),insertMaintenace(db, data)]);
+}
+
+function insertRoom(db, data) {
     console.log("insert new room.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Room_Number, Floor_Number, Roomtype_Id, Location_Id) Values(?, ?, ?, ?, ?)';
-        console.log(data)
-        db.all(query, [data.ShortCut, data.RoomNumber, data.Floor, data.RoomType, data.Location],(error, results) => {
+        const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postalcode) Values(?, ?, ?, ?, ?, ?, ?)';
+        console.log(data);
+        db.all(query, [data.ShortCut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postalcode],(error, results) => {
             if (error) {
-                //console.log(error);
                 reject(error);
             } else {
+                console.log(results);
                 resolve(results);
             }
         });
     });
 }
 
-function insert_new_Location(db, data) {
-    console.log("insert new room.");
+function insertMaintenace(db, data) {
+    console.log("insert new maintenance activity.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Room_Number, Floor_Number, Roomtype_Id, Location_Id) Values(?, ?, ?, ?, ?)';
-        console.log(data)
-        db.all(query, [data.ShortCut, data.RoomNumber, data.Floor, data.RoomType, data.Location],(error, results) => {
+        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values(?, ?, ?, ?)';
+        console.log(data);
+        db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
             if (error) {
-                //console.log(error);
                 reject(error);
             } else {
-                resolve(results);
-            }
-        });
-    });
-}
-
-function insert_new_Roomtype(db, data) {
-    console.log("insert new room.");
-    return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Room_Number, Floor_Number, Roomtype_Id, Location_Id) Values(?, ?, ?, ?, ?)';
-        console.log(data)
-        db.all(query, [data.ShortCut, data.RoomNumber, data.Floor, data.RoomType, data.Location],(error, results) => {
-            if (error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                resolve(results);
-            }
-        });
-    });
-}
-
-function insert_new_MaintenanceDiscription(db, data) {
-    console.log("insert new room.");
-    return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Room_Number, Floor_Number, Roomtype_Id, Location_Id) Values(?, ?, ?, ?, ?)';
-        console.log(data)
-        db.all(query, [data.ShortCut, data.RoomNumber, data.Floor, data.RoomType, data.Location],(error, results) => {
-            if (error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                resolve(results);
-            }
-        });
-    });
-}
-
-function insert_new_MaintenaceActivity(db, data) {
-    console.log("insert new room.");
-    return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Room_Number, Floor_Number, Roomtype_Id, Location_Id) Values(?, ?, ?, ?, ?)';
-        console.log(data)
-        db.all(query, [data.ShortCut, data.RoomNumber, data.Floor, data.RoomType, data.Location],(error, results) => {
-            if (error) {
-                //console.log(error);
-                reject(error);
-            } else {
+                console.log(results);
                 resolve(results);
             }
         });
@@ -274,32 +140,6 @@ function getIdFromInsertRoom(db, data){
 
 }
 
-function insert_new_maintenance_activity(db, data, id) {
-    console.log("insert new room.");
-
-    return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Maintenance_Activity (Room_Shortcut, Date, Remark, Room_Id, Maintenance_Description_Id) Values (?, ?, ?, ?, ?)';
-        //console.log(data)
-       // console.log(id)
-        db.all(query, [data.ShortCut, data.MainDate, data.MainRemark, id.Id, data.MainDescription],(error, results) => {
-            if (error) {
-                //console.log(error);
-                reject(error);
-            } else {
-                resolve(results);
-            }
-        });
-    });
-
-}
-
-function saveNewRoom(db, data) {
-    console.log("Insert Room");
-    return new Promise((resolve, reject) =>  {
-        // TODO add all insert statements
-       const queryRoom = "INSERT INTO Room Values (?, ?, ?)";
-    });
-}
 
 function updateMainDesc(db, room_data, id) {
 
@@ -350,7 +190,7 @@ function updateMainDesc(db, room_data, id) {
         }
         console.log(res);
     });*/
-/*}
+}
 
 
 function update_room(db, room_data, id) {
@@ -375,7 +215,7 @@ function delete_room(db, shortcut) {
         }
         console.log(res);
     });
-}*/
+}
 
 function close_db(db) {
     db.close((err) => {
@@ -387,9 +227,9 @@ function close_db(db) {
 }
 
 module.exports = {
-    initialize_database,
+    /*initialize_database,*/
     open_db,
     close_db,
     getOverviewRoom,
-    getOverview,
-};
+    insert
+}

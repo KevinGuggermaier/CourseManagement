@@ -52,7 +52,7 @@ function do_json_web_request(url){
         }
     };
     httpRequest.send(null);
-}*/
+}
 
 /*function create_http_Request(url) {
     let httpRequest = new XMLHttpRequest();
