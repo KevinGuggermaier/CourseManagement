@@ -54,18 +54,14 @@ function getOverviewRoomById(db, id){
     })
 }
 
-async function select_all_from_table(db, table_name) {
-
-    console.log("Select all from " + table_name);
+function selectAllFromRoom(db, Shortcut) {
     return new Promise((resolve, reject) => {
-        const query = "SELECT * FROM " + table_name;
+        const query = "SELECT * FROM Room WHERE Shortcut = " + Shortcut;
 
         db.all(query, (error, results) => {
             if(error) {
-                //console.log(error);
                 reject(error);
             } else {
-                //console.log(results);
                 resolve(results);
             }
         });
@@ -115,22 +111,43 @@ function insertMaintenace(db, data) {
     });
 }
 
-function getIdFromInsertRoom(db, data){
-    console.log("get id insert new room.");
-    return new Promise((resolve, reject) => {
-        const query = 'SELECT Id from Room order by Id desc';
+function update(db, data) {
+    console.log("[Update]");
+    let updateRoom = updateRoom(db,data);
+    let updateMaintenance = updateMaintenace(db,data);
+    return Promise.all([updateRoom,updateMaintenance]);
+}
 
-       //console.log(data)
-        db.all(query,(error, results) => {
+function updateRoom(db, data) {
+    console.log("update room.");
+    return new Promise((resolve, reject) => {
+        const query = 'UPDATE Room SET Shortcut = ?, Number = ?, Floor = ?, Roomtype = ?, City = ?, Address = ?, Postcode = ? WHERE R_Id = ' + data.R_Id;
+        console.log(data);
+        db.run(query, [data.Shortcut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
             if (error) {
-               // console.log(error);
                 reject(error);
             } else {
+                console.log(results);
                 resolve(results);
             }
         });
     });
+}
 
+function updateMaintenace(db, data) {
+    console.log("update maintenance activity.");
+    return new Promise((resolve, reject) => {
+        const query = 'UPDATE Maintenance_Activity Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + data.Shortcut;
+        console.log(data);
+        db.run(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
+            if (error) {
+                reject(error);
+            } else {
+                console.log(results);
+                resolve(results);
+            }
+        });
+    });
 }
 
 
@@ -226,10 +243,11 @@ module.exports = {
     getOverviewRoom,
     getOverviewRoomById,
     save(db,data) {
-        if(!data.R_id) {
+        if(!data.R_Id) {
             return insert(db,data)
         } else {
             return update(db,data)
         }
-    }
+    },
+    selectAllFromRoom
 }
