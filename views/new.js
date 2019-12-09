@@ -40,6 +40,7 @@ function getNewForm(data){
                 <div id="courseManagement"> 
                     <h1>${header}</h1> 
                      <div id="insertData"> 
+                    
                     <form action="/save" method="POST">
                         <br class="inputHeader">
                         <input type="hidden" id="R_Id" value="${data.R_Id}" name="R_Id"/>

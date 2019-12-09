@@ -113,17 +113,17 @@ function insertMaintenace(db, data) {
 
 function update(db, data) {
     console.log("[Update]");
-    let updateRoom = updateRoom(db,data);
-    let updateMaintenance = updateMaintenace(db,data);
-    return Promise.all([updateRoom,updateMaintenance]);
+    let updateRoom1 = updateRoom(db,data);
+    let updateMaintenance1 = updateMaintenace(db,data);
+    return Promise.all([updateRoom1,updateMaintenance1]);
 }
 
 function updateRoom(db, data) {
     console.log("update room.");
     return new Promise((resolve, reject) => {
-        const query = 'UPDATE Room SET Shortcut = ?, Number = ?, Floor = ?, Roomtype = ?, City = ?, Address = ?, Postcode = ? WHERE R_Id = ' + data.R_Id;
+        const query = 'UPDATE Room SET Number = ?, Floor = ?, Roomtype = ?, City = ?, Address = ?, Postcode = ? WHERE R_Id = ' + data.R_Id;
         console.log(data);
-        db.run(query, [data.Shortcut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
+        db.run(query, [data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -136,8 +136,47 @@ function updateRoom(db, data) {
 
 function updateMaintenace(db, data) {
     console.log("update maintenance activity.");
-    return new Promise((resolve, reject) => {
-        const query = 'UPDATE Maintenance_Activity Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + data.Shortcut;
+
+    const queryMain = "Select * from Maintenance_Activity where Shortcut = " + '"' + data.Shortcut + '"';
+    let request = null;
+
+    db.all(queryMain, function(err, res) {
+        if (err) {
+            console.log(err.message);
+        }
+        request = res;
+        if(res.length === 0){
+            return new Promise((resolve, reject) => {
+                db.all('INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)',
+                    [data.Date, data.Remark, data.Description, data.Shortcut], function (err, res) {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(res)
+                        }
+
+                    });
+            });
+        }else
+        {
+            return new Promise((resolve, reject) => {
+                db.run('UPDATE Maintenance_Activity SET Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + '"' + data.Shortcut + '"',
+                    [data.Date, data.Remark, data.Description, data.Shortcut], function (err, res) {
+                        if (err) {
+                            reject(err);
+                        }else
+                        {
+                            resolve(res);
+                        }
+
+                    });
+            });
+        }
+
+    });
+
+    /*return new Promise((resolve, reject) => {
+        const query = 'UPDATE Maintenance_Activity SET Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + '"' + data.Shortcut + '"';
         console.log(data);
         db.run(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
             if (error) {
@@ -147,7 +186,7 @@ function updateMaintenace(db, data) {
                 resolve(results);
             }
         });
-    });
+    });*/
 }
 
 
