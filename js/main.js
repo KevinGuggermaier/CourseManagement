@@ -2,7 +2,7 @@
 
 let local_json_path = './resources/Test_data.json';
 let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung"];
-
+let json_object = null;
 /*
 let model = require('./model');
 
@@ -25,7 +25,7 @@ window.addEventListener("load", function () {
         jsonObj = Http.responseText//.replace("[", "");
         //jsonObj = jsonObj.replace("]", "");
         let str =""
-        let json_object = JSON.parse(jsonObj)
+        json_object = JSON.parse(jsonObj)
         if(json_object.length === 0) {
             str = "Die Datei fürs Einlesen enthält keine Daten :(";
         }
@@ -43,31 +43,6 @@ function print_window() {
    window.print();
 }
 
-/*// Json read-methods
-function do_json_web_request(url){
-    let httpRequest = create_http_Request(url);
-    httpRequest.onreadystatechange = function () {
-        if (httpRequest.readyState == 4 && httpRequest.status == "200") {           
-			json_object = JSON.parse(httpRequest.responseText);
-			let str = "";
-			if(json_object.length === 0) {
-			    str = "Die Datei fürs Einlesen enthält keine Daten :(";
-            }
-			//console.log(json_object);
-			fill_table(json_object,str);
-        }
-    };
-    httpRequest.send(null);
-}
-
-/*function create_http_Request(url) {
-    let httpRequest = new XMLHttpRequest();
-    httpRequest.overrideMimeType("application/json");
-    httpRequest.open("GET", url, true);
-    return httpRequest;
-}*/
-
-
 /*// Fill table with data */
 function fill_table(json_object,else_str) {
 	document.getElementById("RoomOverviewTable").innerHTML = "";
@@ -83,29 +58,56 @@ function fill_table(json_object,else_str) {
         for (i = 0; i < json_object.length; i++) {
             let currentRoom = json_object[i];
             row = table.insertRow(i);
-
             let columnCnt = 0;
             for (let key of Object.keys(currentRoom)) {
-                let cell = row.insertCell(columnCnt);
-                cell.setAttribute("class", "cells");
-                if (columnCnt === 0) {
-                    cell.setAttribute("class", "cells, firstCellInRow");
+                let cell = null;
+                if(columnCnt < 6){
+                    cell = row.insertCell(columnCnt);
+                    console.log(key)
+                    cell.setAttribute("class", "cells");
+                    if (columnCnt === 0) {
+                        cell.setAttribute("class", "cells, firstCellInRow");
+                    }
+                    // can be changed if differently wanted
+                    if (columnCnt === 1) {
+                        cell.setAttribute("class", "cells, secondCellInRow");
+                    }
+                    if(columnCnt < 6) {
+                        cell.innerHTML = "<span class='lineHeaders'>" + headers[columnCnt] + "</span>"; // current header for mobile
+
+                    }
                 }
-                // can be changed if differently wanted
-                if (columnCnt === 1) {
-                    cell.setAttribute("class", "cells, secondCellInRow");
-                }
-                cell.innerHTML = "<span class='lineHeaders'>" + headers[columnCnt] + "</span>"; // current header for mobile
+
                 columnCnt++;
+                switch (columnCnt) {
+                    case 1:
+                        cell.innerHTML += currentRoom.Shortcut;
+                        break;
+                    case 2:
+                        cell.innerHTML += currentRoom.Roomtype;
+                        break;
+                    case 3:
+                        cell.innerHTML += currentRoom.Postcode + "<br>" + currentRoom.City + "<br>" + currentRoom.Address;
+                        break;
+                    case 4:
+                        cell.innerHTML += currentRoom.Number;
+                        break;
+                    case 5:
+                        cell.innerHTML += currentRoom.Floor;
+                        break;
+                }
+                /*
                 if (currentRoom[key] instanceof Array) {
                     for (let j = 0; j < currentRoom[key].length; j++) {
+                        console.log("HELLo")
                         cell.innerHTML += iterate_through_sub_object(currentRoom[key][j]) + "<br>";
                     }
                 } else if (currentRoom[key] instanceof Object) {
                     cell.innerHTML += iterate_through_sub_object(currentRoom[key]);
                 } else {
+                    console.log("STRING")
                     cell.innerHTML += currentRoom[key];
-                }
+                }*/
             }
         }
     }
@@ -130,7 +132,7 @@ function create_table_header(row) {
     }
 }
 
-function iterate_through_sub_object(obj) {
+/*function iterate_through_sub_object(obj) {
     let objString = "";
     if (obj instanceof Object) {
         for (let property in obj) {
@@ -141,23 +143,9 @@ function iterate_through_sub_object(obj) {
         }
     }
     return objString;
-}
+}*/
 
 async function on_search(){
-
-    let jsonObj = "";
-
-    const Http = new XMLHttpRequest();
-    const url='http://localhost:8080/getJsonForSearch';
-    Http.open("GET", url);
-    Http.onprogress = function () {
-        console.log("PROGRESS:", Http.responseText)
-        jsonObj = Http.responseText.replace("[", "");
-        jsonObj = jsonObj.replace("]", "");
-        jsonObj = JSON.parse(jsonObj)
-        console.log(jsonObj)
-    }
-    Http.send();
 
 
     if (this.timer) {
@@ -183,7 +171,7 @@ async function on_search(){
 
 }
 
-function iterate_through_sub_object_Search(obj) {
+/*function iterate_through_sub_object_Search(obj) {
     let objString = "";
     if (obj instanceof Object) {
         for (let property in obj) {
@@ -194,7 +182,7 @@ function iterate_through_sub_object_Search(obj) {
         }
     }
     return objString;
-}
+}*/
 
 function search_data(search_string, jsonObject){
 
@@ -207,7 +195,7 @@ function search_data(search_string, jsonObject){
     for (let i = 0; i < jsonObject.length; i++) {
 
         Object.keys(jsonObject[i]).forEach(function(key) {
-            if(jsonObject[i][key] instanceof Array){
+            /*if(jsonObject[i][key] instanceof Array){
                 for (let j = 0; j < jsonObject[i][key].length; j++) {
                     jsonString += iterate_through_sub_object_Search(jsonObject[i][key][j]);
                 }
@@ -215,9 +203,9 @@ function search_data(search_string, jsonObject){
             else if(jsonObject[i][key] instanceof Object){
                 jsonString += String(iterate_through_sub_object_Search(jsonObject[i][key]));
             }
-            else {
+            else {*/
                 jsonString += String(jsonObject[i][key]);
-            }
+            //}
             jsonString += " ";
         });
         jsonString = String(jsonString).toLowerCase();
@@ -234,7 +222,7 @@ function search_data(search_string, jsonObject){
     return search_data(search_string, JSON.parse(newStr));
 }
 
-/*function expand(){
+function expand(){
     document.getElementById("insertData").style.display = "inline";
     document.getElementById("btnShowFieldInsertData").setAttribute('onclick',"fold()");
 }
@@ -244,7 +232,7 @@ function fold(){
     document.getElementById("btnShowFieldInsertData").setAttribute('onclick',"expand()");
 
     deleteInputFields(document.getElementsByClassName("inputField"));
-}*/
+}
 
 function deleteInputFields(inputFields){
     for(let i in inputFields){

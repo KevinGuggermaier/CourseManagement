@@ -40,25 +40,18 @@ function getOverviewRoom(db){
     })
 }
 
-async function getOverviewById(db, id) {
-    console.log("Get View RoomOverviewById");
-    console.log("ID from model.js", id)
-    return await new Promise((resolve, reject) => {
-        const query = "SELECT Room.Id, Room.Shortcut, Room.Room_Number, Room.Floor_Number, Roomtype.Roomtype , Location.Address, Location.Name, Location.Postcode FROM " +
-            "Room INNER JOIN Location ON Room.Location_Id == Location.Location_Id " +
-            "INNER JOIN Roomtype ON Room.Roomtype_Id == Roomtype.Roomtype_Id where Room.Id = " + id;
+async function select_all_from_table(db, table_name) {
 
-        const t = "SELECT * from Room INNER JOIN Location on Room.Location_Id == Location.Location_Id LEFT JOIN Maintenance_Activity on Room.Id == Maintenance_Activity.Room_Id" +
-            " INNER JOIN Roomtype ON Room.Roomtype_Id == Roomtype.Roomtype_Id LEFT JOIN Maintenance_Description on Maintenance_Description.Maintenance_Description_Id == Maintenance_Activity.Maintenance_Description_Id " +
-            "where Room.Id = " + id;
+    console.log("Select all from " + table_name);
+    return new Promise((resolve, reject) => {
+        const query = "SELECT * FROM " + table_name;
 
-        console.log(t);
-
-        db.all(t, (error, results) => {
+        db.all(query, (error, results) => {
             if(error) {
+                //console.log(error);
                 reject(error);
             } else {
-                console.log("result", results);
+                //console.log(results);
                 resolve(results);
             }
         });
@@ -67,24 +60,7 @@ async function getOverviewById(db, id) {
 
 }
 
-function getMaintenanceOverview(db) {
-    console.log("Get Maintenance Activity Overview")
 
-    return new Promise((resolve, reject) => {
-       const query = "SELECT Maintenance_Activity.Room_Id, Maintenance_Activity.Room_Shortcut, Maintenance_Activity.Remark, Maintenance_Activity.Date, Maintenance_Description.Description " +
-           "FROM Maintenance_Activity JOIN Maintenance_Description ON Maintenance_Activity.Maintenance_Description_Id = Maintenance_Description.Maintenance_Description_Id";
-
-       db.all(query, (error, result) => {
-           if(error) {
-               //console.log(error);
-               reject(error);
-           } else {
-               //console.log(result);
-               resolve(result);
-           }
-       });
-    });
-}
 
 async function insert(db, data) {
     console.log("[Insert]");

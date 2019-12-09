@@ -135,7 +135,15 @@ const server = http.createServer((request, response) => {
         )
     }
     else {
-          send(response, 200,{ 'content-type': 'text/html' }, getForm());
+        send(response, 200,{ 'content-type': 'text/html' }, getForm());
+        /*dbModule.getOverview(db).then(
+            data => {
+                send(response, 200,{ 'content-type': 'text/html' }, getForm());
+            },
+            error => send(response, 404,{"content-type": "text/plain"},error),
+        );*/
+
+
     }
 
     dbModule.close_db(db);
