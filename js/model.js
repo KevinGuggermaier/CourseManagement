@@ -86,16 +86,19 @@ function getMaintenanceOverview(db) {
     });
 }
 
-function insert(db, data) {
-    return new Promise.all([insertRoom(db, data),insertMaintenace(db, data)]);
+async function insert(db, data) {
+    console.log("[Insert]");
+    let insertionRoom = insertRoom(db,data);
+    let insertionMaintenance = insertMaintenace(db,data);
+    return await Promise.all([insertionRoom,insertionMaintenance]);
 }
 
 function insertRoom(db, data) {
     console.log("insert new room.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postalcode) Values(?, ?, ?, ?, ?, ?, ?)';
+        const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postcode) Values (?, ?, ?, ?, ?, ?, ?)';
         console.log(data);
-        db.all(query, [data.ShortCut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postalcode],(error, results) => {
+        db.run(query, [data.Shortcut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -109,9 +112,9 @@ function insertRoom(db, data) {
 function insertMaintenace(db, data) {
     console.log("insert new maintenance activity.");
     return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values(?, ?, ?, ?)';
+        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
         console.log(data);
-        db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
+        db.run(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
             if (error) {
                 reject(error);
             } else {

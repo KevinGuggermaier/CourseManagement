@@ -101,63 +101,17 @@ const server = http.createServer((request, response) => {
             error => console.log(error),
         )
     }*/
-    /*else if (URLparams.includes("update") && request.method === "POST"){
-        console.log("UPDATE set")
-        console.log(URLparams[2])
-        let body = [];
-        request.on('data', (chunk) => {
-            body.push(chunk);
-        }).on('end', () => {
-            let jsonFile = JSON.parse(body.toString());
-            const t = dbModule.open_db();
-
-            dbModule.update_room(t, jsonFile, URLparams[2])
-            dbModule.updateMainDesc(t, jsonFile, URLparams[2])
-            dbModule.close_db(t)
-            redirect(response, {'content-type': 'text/plain'}, "/");
-        });
-
-    }*/
-    /*else if(URLparams.includes("new") && request.method === "POST") {
-        console.log("new")
-        let body = [];
-        request.on('data', (chunk) => {
-            body.push(chunk);
-        }).on('end', () => {
-
-            let jsonFile = JSON.parse(body.toString());
-            const t = dbModule.open_db();
-            dbModule.insert_new_room(t, jsonFile);
-            dbModule.getIdFromInsertRoom(t, jsonFile).then(
-                data => {
-                    //console.log(data);
-                    dbModule.insert_new_maintenance_activity(t, jsonFile, data[0])
-                },
-                error => console.log(error),
-            );
-
-            dbModule.close_db(t)
-        });
-
-    }*/
     else if(URLparams.includes("save") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         //console.log("SAVE ;) ", form)
         form.parse(request, (err, data, files) => {
             console.log('data', data);
 
-            /*model.save(note).then(
-                notes => {
-                    redirect(response, '/');
-                },
-                error => send(response, error),
-            );*/
+            dbModule.insert(db,data).then(
+                data => { redirect(response,{'content-type':'text/plain'},"/");
+            },
+                error => send(response, 404, {'content-type':'text/plain'}, error));
         });
-        //console.log()
-        /*form.parse(request, (err, data, files) => {
-            console.log("data", data);
-
-        });*/
     } else if(URLparams.includes("images")) {
         sendFile(response, request)
 
@@ -181,46 +135,13 @@ const server = http.createServer((request, response) => {
         )
     }
     else {
-        dbModule.getOverview(db).then(
-            data => {
-                send(response, 200,{ 'content-type': 'text/html' }, getForm());
-            },
-            error => send(response, 404,{"content-type": "text/plain"},error),
-        );
-
-
+          send(response, 200,{ 'content-type': 'text/html' }, getForm());
     }
 
     dbModule.close_db(db);
 
 });
 
-async function selectionForNewRoom(db) {
-    let p1 = dbModule.select_all_from_table(db, "Location");/*.then(
-        data => {
-            console.log(data);
-            location = data;
-        },
-        error => console.log(error),
-    );*/
-    let p2 = dbModule.select_all_from_table(db, "Roomtype");/*.then(
-        data => {
-            console.log(data);
-            roomtype = data;
-        },
-        error => console.log(error),
-    );*/
-    let p3 = dbModule.select_all_from_table(db, "Maintenance_Description");/*.then(
-        data => {
-            console.log(data);
-            mainDesc = data;
-        },
-        error => console.log(error),
-    );*/
-
-
-    return await Promise.all([p1,p2,p3]);
-}
 
 server.listen(8080, () =>
     console.log("Server is listening to https://localhost:8080"),

@@ -23,26 +23,8 @@ function getForm(){
     <div id="SearchInputDiv">
         <label for="SearchInput"></label><input type="text" id="SearchInput" placeholder="Suche ...">
         </div>
-        <button id="btnShowFieldInsertData" class="btn" onclick="expand()">Neue Daten hinzufügen</button><br>
-    <div id="insertData">
-        <br class="inputHeader"><input class="inputField" type="text" id="ShortCut" placeholder="Kurzbezeichnung" required>
-    <input class="inputField" type="text" id="RoomType" placeholder="Raumtyp" required>
-    <input class="inputField" type="text" id="RoomNumber" placeholder="Raumnummer" required>
-    <input class="inputField" type="text" id="Floor" placeholder="Stockwerk" required>
-
-    <p class="inputHeader">Adresse</p>
-        <input class="inputField" type="text" name="input" id="Location" placeholder="Ort" required>
-    <input class="inputField" type="text" id="LocationStreet" placeholder="Straße" required>
-    <input class="inputField" type="text" id="LocationPlz" placeholder="Plz" required>
-
-    <p class="inputHeader">Instandhaltung</p>
-        <input class="inputField" type="text" id="MA_Desc" placeholder="Bezeichnung">
-        <input class="inputField" type="text" id="MA_Date" placeholder="Datum [yyyy-mm-dd]">
-        <input class="inputField" type="text" id="MA_Time" placeholder="Uhrzeit [hh:mm]">
-        <input class="inputField" type="text" id="MA_Remark" placeholder="Anmerkung">
-        <p class="inputHeader">* Rote Felder sind Pflichtfelder</p>
-    <button id="btnInsertData" class="btn">Daten hinzufügen</button><br>
-    </div>
+        <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a><br>
+    
     <br>
     <table id="RoomOverviewTable"></table>
         <br>
