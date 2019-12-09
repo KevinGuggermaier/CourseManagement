@@ -85,7 +85,7 @@ const server = http.createServer((request, response) => {
             dbModule.save(t,data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
-                error => send(response, 404, {'content-type':'text/plain'}, getPageDuplicat())
+                error => send(response, 404, {'content-type':'text/html'}, getPageDuplicat())
             );
 
             dbModule.close_db(t);
@@ -108,7 +108,7 @@ const server = http.createServer((request, response) => {
                 response.write(JSON.stringify(data)); // You Can Call Response.write Infinite Times BEFORE response.end
                 response.end();
             },
-            error => console.log(error),
+            error => send(response, 404, {'content-type': 'text/html'}, getPage404()),
         )
     }
     else {

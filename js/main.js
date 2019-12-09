@@ -17,7 +17,7 @@ window.addEventListener("load", function () {
    document.getElementById("else_text").style.display = "none";
    //do_json_web_request(local_json_path);
     let jsonObj = "";
-
+    json_object = null;
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/getJsonRoom';
     Http.open("GET", url);
