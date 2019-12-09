@@ -29,7 +29,7 @@ async function initialize_database(db) {
 
 function getOverviewRoom(db){
     return new Promise((resolve, reject) => {
-        const query = "Select * from Room";
+        const query = "select Room.*, Maintenance_Activity.MA_Id, Maintenance_Activity.Date, Maintenance_Activity.Remark, Maintenance_Activity.Description from Room left join Maintenance_Activity on Room.Shortcut = Maintenance_Activity.Shortcut";
         db.all(query, (error, result) => {
             if(error){
                 reject(error);

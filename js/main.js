@@ -21,21 +21,17 @@ window.addEventListener("load", function () {
     const url='http://localhost:8080/getJsonRoom';
     Http.open("GET", url);
     Http.onprogress = function () {
-        console.log("PROGRESS:", Http.responseText)
-        jsonObj = Http.responseText//.replace("[", "");
-        //jsonObj = jsonObj.replace("]", "");
-        let str =""
-        json_object = JSON.parse(jsonObj)
+        console.log("PROGRESS:", Http.responseText);
+        jsonObj = Http.responseText;
+        let str ="";
+        json_object = JSON.parse(jsonObj);
         if(json_object.length === 0) {
             str = "Die Datei fürs Einlesen enthält keine Daten :(";
         }
-        //console.log(json_object);
         fill_table(json_object,str);
-        /*console.log(jsonObj.Name)
-        document.getElementById("LocationStreet").value = jsonObj.Address;
-        document.getElementById("LocationPlz").value = jsonObj.Postcode;*/
-    }
+    };
     Http.send();
+
    document.getElementById("btnPrint").addEventListener("click", print_window);
 });
 
@@ -61,7 +57,7 @@ function fill_table(json_object,else_str) {
             let columnCnt = 0;
             for (let key of Object.keys(currentRoom)) {
                 let cell = null;
-                if(columnCnt < 6){
+                if(columnCnt < 7){
                     cell = row.insertCell(columnCnt);
                     console.log(key)
                     cell.setAttribute("class", "cells");
@@ -72,7 +68,7 @@ function fill_table(json_object,else_str) {
                     if (columnCnt === 1) {
                         cell.setAttribute("class", "cells, secondCellInRow");
                     }
-                    if(columnCnt < 6) {
+                    if(columnCnt < 7) {
                         cell.innerHTML = "<span class='lineHeaders'>" + headers[columnCnt] + "</span>"; // current header for mobile
 
                     }
@@ -94,6 +90,11 @@ function fill_table(json_object,else_str) {
                         break;
                     case 5:
                         cell.innerHTML += currentRoom.Floor;
+                        break;
+                    case 6:
+                        if(currentRoom.MA_Id !== null){
+                            cell.innerHTML += currentRoom.Remark + "<br>" + currentRoom.Date + "<br>" + currentRoom.Description;
+                        }
                         break;
                 }
                 /*
