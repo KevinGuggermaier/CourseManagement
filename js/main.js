@@ -96,6 +96,12 @@ function fill_table(json_object,else_str) {
                             cell.innerHTML += currentRoom.Remark + "<br>" + currentRoom.Date + "<br>" + currentRoom.Description;
                         }
                         break;
+                    case 7:
+                        console.log("KLSDKJS")
+                        let hrefString = "/edit/" + currentRoom.R_Id;
+                        cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Edit</button></a><br>`
+                        break;
+
                 }
                 /*
                 if (currentRoom[key] instanceof Array) {

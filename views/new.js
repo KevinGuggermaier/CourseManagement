@@ -1,4 +1,6 @@
 function getNewForm(data){
+    console.log(data)
+    data = data[0]
     if(data == null) {
         data = {
             R_id : '',
@@ -28,7 +30,7 @@ function getNewForm(data){
                 <meta charset="UTF-8"> 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
                 <link href="css/main.css" rel="stylesheet" type="text/css"/> 
-                <link href="js/main.js" rel="stylesheet" type="text/javascript"/> 
+               
             </head>
             <body> 
                 <div id="courseManagement"> 
@@ -36,23 +38,23 @@ function getNewForm(data){
                      <div id="insertData"> 
                     <form action="/save" method="POST">
                         <br class="inputHeader">
-                        <input type="hidden" id="R_Id" value="{data.R_id}"/>
-                        <input class="inputField" type="text" id="ShortCut" placeholder="Kurzbezeichnung" name="Shortcut" required> 
+                        <input type="hidden" id="R_Id" value="${data.R_id}"/>
+                        <input class="inputField" type="text" id="ShortCut" placeholder="Kurzbezeichnung" value="${data.Shortcut}" required> 
                         
-                        <input class="inputField" type="text" id="RoomType" placeholder="Raumtyp" name="Roomtype" required> 
-                        <input class="inputField" type="text" id="RoomNumber" placeholder="Raumnummer" name="Number" required> 
-                        <input class="inputField" type="text" id="Floor" placeholder="Stockwerk" name="Floor" required> 
+                        <input class="inputField" type="text" id="RoomType" placeholder="Raumtyp" name="Roomtype" value="${data.Roomtype}" required> 
+                        <input class="inputField" type="text" id="RoomNumber" placeholder="Raumnummer" name="Number" value="${data.Number}" required> 
+                        <input class="inputField" type="text" id="Floor" placeholder="Stockwerk" name="Floor" value="${data.Floor}" required> 
 
                         <p class="inputHeader">Adresse</p> 
-                        <input class="inputField" type="text" id="Location" placeholder="Ort" name="City" required> 
-                        <input class="inputField" type="text" id="LocationStreet" placeholder="Straße" name="Address"> 
-                        <input class="inputField" type="text" id="LocationPlz" placeholder="Plz" name="Postcode"> 
+                        <input class="inputField" type="text" id="Location" placeholder="Ort" name="City" value="${data.City}" required> 
+                        <input class="inputField" type="text" id="LocationStreet" placeholder="Straße" name="Address" value="${data.Address}"> 
+                        <input class="inputField" type="text" id="LocationPlz" placeholder="Plz" name="Postcode" value="${data.Postcode}"> 
 
                         <p class="inputHeader">Instandhaltung</p> 
                        
-                        <input class="inputField" type="text" id="MA_Desc" placeholder="Bezeichnung" name="Description"> 
-                        <input class="inputField" type="text" id="MA_Date" placeholder="Datum [yyyy-mm-dd]" name="Date"> 
-                        <input class="inputField" type="text" id="MA_Remark" placeholder="Anmerkung" name="Remark"> 
+                        <input class="inputField" type="text" id="MA_Desc" placeholder="Bezeichnung" name="Description" value="${data.Description}"> 
+                        <input class="inputField" type="text" id="MA_Date" placeholder="Datum [yyyy-mm-dd]" name="Date" value="${data.Date}"> 
+                        <input class="inputField" type="text" id="MA_Remark" placeholder="Anmerkung" name="Remark" value="${data.Remark}"> 
 
                         <p class="inputHeader">* Rote Felder sind Pflichtfelder</p> 
                         <button id="submit" class="btn">Daten hinzufügen</button><br> 
@@ -62,7 +64,7 @@ function getNewForm(data){
                     
                     <br> 
                 </div> 
-                <script src="js/main.js" type="text/javascript"></script> 
+               
             </body>
         </html>`;
 

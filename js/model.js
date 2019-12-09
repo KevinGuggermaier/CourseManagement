@@ -40,6 +40,20 @@ function getOverviewRoom(db){
     })
 }
 
+function getOverviewRoomById(db, id){
+    return new Promise((resolve, reject) => {
+        const query = "select Room.*, Maintenance_Activity.MA_Id, Maintenance_Activity.Date, Maintenance_Activity.Remark, Maintenance_Activity.Description from Room left join Maintenance_Activity on Room.Shortcut = Maintenance_Activity.Shortcut " +
+            "where Room.R_Id = " + id;
+        db.all(query, (error, result) => {
+            if(error){
+                reject(error);
+            }else {
+                resolve(result);
+            }
+        })
+    })
+}
+
 async function select_all_from_table(db, table_name) {
 
     console.log("Select all from " + table_name);
@@ -210,6 +224,7 @@ module.exports = {
     open_db,
     close_db,
     getOverviewRoom,
+    getOverviewRoomById,
     save(db,data) {
         if(!data.R_id) {
             return insert(db,data)

@@ -28,28 +28,11 @@ const server = http.createServer((request, response) => {
         console.log(URLparams[2])
         if (URLparams.length == 3 && !isNaN(URLparams[2])) {
             console.log("TEST" , URLparams)
-            selectionForNewRoom(db).then(
+            dbModule.getOverviewRoomById(db, URLparams[2]).then(
                 data => {
-                      values = data;
-                    });
-            dbModule.getMaintenanceOverview(db).then(
-                data => {
-                    maintenancy = data;
-                });
-            dbModule.getOverviewById(db, URLparams[2]).then(
-                data => {
-                    send(response, 200,{ 'content-type': 'text/html' }, getFormForEdit(data, values[1], values[0], values[2], URLparams[2]));
-                },
-                error => send(response, 404,{"content-type": "text/plain"},error),
-            );
-
-            /*dbModule.getOverviewById(db, URLparams[2]).then(
-                note => {
-                    console.log(note);
-                    send(response, getFormForEdit(note));
-                },
-                error => send(response, error),
-            );*/
+                    send(response, 200, {'content-type': 'text/html'}, getNewForm(data))
+                }
+            )
         }
 
     /*}else if(URLparams.includes("location")){
@@ -117,8 +100,7 @@ const server = http.createServer((request, response) => {
     } else if(URLparams.includes("images")) {
         sendFile(response, request)
 
-    }else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/editHandler.js") {
-
+    }else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/main.js") {
         request.url = request.url.toString().slice(5, request.url.toString().length);
         sendFile(response, request, 'utf8');
     }
