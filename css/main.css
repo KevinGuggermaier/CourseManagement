@@ -8,10 +8,6 @@
     font-size: 0.9em;
 }
 
-/*#insertData {
-    display: none;
-}*/
-
 @media screen {
     input[type=text], select {
       width: 80%;
@@ -123,11 +119,11 @@
         break-inside: avoid;
     }
 
-    #btnPrint, #SearchInputDiv, #btnShowFieldInsertData, #insertData, #btnInsertData {
+    #btnPrint, #SearchInputDiv, #btnShowFieldInsertData, #insertData, #btnInsertData, #InsertNewRoom {
         display: none;
     }
 
-    .inputHeader, .inputField {
+    .inputHeader {
         display: none;
     }
 }

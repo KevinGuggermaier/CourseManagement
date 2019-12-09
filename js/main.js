@@ -1,7 +1,7 @@
 // Declare variables
 
 let local_json_path = './resources/Test_data.json';
-let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung","Action"];
+let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung","Aktion"];
 let json_object = null;
 /*
 let model = require('./model');
@@ -97,9 +97,8 @@ function fill_table(json_object,else_str) {
                         }
                         break;
                     case 7:
-                        console.log("KLSDKJS")
                         let hrefString = "/edit/" + currentRoom.R_Id;
-                        cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Edit</button></a><br>`
+                        cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
                         break;
 
                 }
