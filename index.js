@@ -10,7 +10,6 @@ const redirect = resHandler.redirect;
 const formidable = require("formidable");
 
 const getForm = require("./views/form");
-const getFormForEdit = require("./views/edit");
 const getNewForm = require("./views/new");
 
 

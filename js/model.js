@@ -189,18 +189,6 @@ function updateMaintenace(db, data) {
     });*/
 }
 
-
-
-function delete_room(db, shortcut) {
-    console.log("delete room.");
-    db.run("DELETE FROM Room WHERE Shortcut = ?", shortcut, function(err, res) {
-        if (err) {
-            console.log(err.message);
-        }
-        console.log(res);
-    });
-}
-
 function close_db(db) {
     db.close((err) => {
         if (err) {
