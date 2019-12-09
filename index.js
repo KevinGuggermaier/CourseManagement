@@ -25,7 +25,7 @@ function getPage404() {
             <div id="page404">
                 <h1>Auf der Seite ist ein Fehler aufgetreten</h1>
                 <br>
-                <a href="/"><button id="back" class="btn">Zurück zu Home</button></a><br> 
+                <a href="/"><button id="back" class="btn">Zurück zur Startseite</button></a><br> 
             </div>
         </body>
     </html>`;
@@ -44,7 +44,7 @@ function getPageDuplicat() {
             <div id="page404">
                 <h1>Der Raum den du einfügen wolltest existiert bereits!</h1>
                 <br>
-                <a href="/"><button id="back" class="btn">Zurück zu Home</button></a><br> 
+                <a href="/"><button id="back" class="btn">Zurück zur Startseite</button></a><br> 
             </div>
         </body>
     </html>`;
@@ -85,7 +85,7 @@ const server = http.createServer((request, response) => {
             dbModule.save(t,data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
-                error => send(response, 404, {'content-type':'text/plain'}, getPageDuplicat())
+                error => send(response, 404, {'content-type':'text/html'}, getPageDuplicat())
             );
 
             dbModule.close_db(t);
@@ -108,7 +108,7 @@ const server = http.createServer((request, response) => {
                 response.write(JSON.stringify(data)); // You Can Call Response.write Infinite Times BEFORE response.end
                 response.end();
             },
-            error => console.log(error),
+            error => send(response, 404, {'content-type': 'text/html'}, getPage404()),
         )
     }
     else {
@@ -121,5 +121,5 @@ const server = http.createServer((request, response) => {
 
 
 server.listen(8080, () =>
-    console.log("Server is listening to https://localhost:8080"),
+    console.log("Server is listening to http://localhost:8080"),
 );

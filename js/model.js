@@ -81,6 +81,7 @@ function insert(db, data) {
 
 function insertRoom(db, data) {
     console.log("insert new room.");
+    data.Shortcut = data.Shortcut.toString().toUpperCase();
     return new Promise((resolve, reject) => {
         const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postcode) Values (?, ?, ?, ?, ?, ?, ?)';
         console.log(data);
@@ -97,7 +98,30 @@ function insertRoom(db, data) {
 
 function insertMaintenace(db, data) {
     console.log("insert new maintenance activity.");
-    return new Promise((resolve, reject) => {
+    data.Shortcut = data.Shortcut.toString().toUpperCase();
+    const query1 = "Select * from Maintenance_Activity Where Shortcut = " + '"' + data.Shortcut + '"';
+    let request = null;
+    db.all(query1, (err, res) => {
+        if (err) {
+            console.log(err.message);
+        }
+        request = res;
+        if(res.length === 0){
+            return new Promise((resolve, reject) => {
+                const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
+                console.log(data);
+                db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        console.log(results);
+                        resolve(results);
+                    }
+                });
+            });
+        }
+    });
+    /*return new Promise((resolve, reject) => {
         const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
         console.log(data);
         db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
@@ -108,7 +132,7 @@ function insertMaintenace(db, data) {
                 resolve(results);
             }
         });
-    });
+    });*/
 }
 
 function update(db, data) {
