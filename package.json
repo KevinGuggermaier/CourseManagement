@@ -1,0 +1,9 @@
+{
+  "name": "Course_Management_System",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "latest",
+    "formidable": "^1.2.1",
+    "sqlite3": "^4.1.1"
+  }
+}

@@ -1,0 +1,133 @@
+* {
+    font-family: "Segoe UI", serif
+}
+
+#else_text {
+    position: relative;
+    left: 0;
+    font-size: 0.9em;
+}
+
+/*#insertData {
+    display: none;
+}*/
+
+@media screen {
+    input[type=text], select {
+      width: 80%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .btn {
+        border-radius: 4px;
+        border: 2px solid #bababa;
+        color: #6e6e6e;
+        padding: 12px 20px;
+    }
+
+    #btnPrint {
+      position: absolute;
+      right: 2%;
+      top: 2%;
+      width: 15%;
+    }
+
+    #btnShowFieldInsertData, #btnInsertData {
+        width: 15%;
+    }
+
+    #btnPrint:hover, #btnInsertData:hover, #btnShowFieldInsertData:hover {
+      background-color: #bababa;
+      color: white;
+      font-weight: bold;
+    }
+
+    .lineHeaders {
+        display: none;
+    }
+
+    input:required {
+        border:2px solid tomato;
+    }
+
+    input:valid {
+        border: 2px solid #bababa;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #btnPrint {
+        position: relative;
+        left: 0;
+        float: none;
+        width: 80%;
+    }
+    input[type=text], select {
+        width: 80%;
+    }
+    #btnShowFieldInsertData, #btnInsertData {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #btnPrint {
+        position: relative;
+        left: 0;
+        float: none;
+        width: 100%;
+    }
+    input[type=text], select {
+        width: 100%;
+    }
+    #headers {
+        display: none;
+    }
+    .cells {
+        display: block;
+    }
+    .lineHeaders {
+        display: block;
+        font-weight: bold;
+    }
+    #btnShowFieldInsertData, #btnInsertData {
+        width: 100%;
+    }
+    .secondCellInRow {
+        display: block;
+    }
+    .row {
+        border-top: 2px solid #474747;
+    }
+}
+
+@media print {
+    @page {
+        margin: 0.5cm;
+    }
+
+    .lineHeaders {
+        display: none;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .row {
+        break-inside: avoid;
+    }
+
+    #btnPrint, #SearchInputDiv, #btnShowFieldInsertData, #insertData, #btnInsertData {
+        display: none;
+    }
+
+    .inputHeader, .inputField {
+        display: none;
+    }
+}

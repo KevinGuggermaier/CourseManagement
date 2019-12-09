@@ -1,0 +1,2252 @@
+[
+  {
+    "ShortCut": "K.WS46B.101",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.128",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.103",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.104",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.128",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.105",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.102",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.129",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.106",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.107",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.129",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.108",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.109",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.110",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.111",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.180",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.112",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.104",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.131",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.113",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.114",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.181",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.115",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.105",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.116",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.117",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.182",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.118",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.106",
+    "RoomType": "EDVLabor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "100",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.133",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "100",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.119",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Neue Wandfarbe"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.123",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "102",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.120",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "203",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Instandhaltung",
+        "Date": "2019-12-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.204",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "204",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.305",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "305",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA11.130",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "130",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS48B.102",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 48",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "102",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA14.183",
+    "RoomType": "EDV-Labor",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "128",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.222",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "222",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA16.132",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 152",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "132",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.312",
+    "RoomType": "Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "312",
+    "Floor": "3",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "G.EA12.218",
+    "RoomType": "Seminarraum",
+    "Location": {
+      "Name": "Standort Graz",
+      "Address": "Alte Poststrasse 149",
+      "PostCode": "8020"
+    },
+    "RoomNumber": "218",
+    "Floor": "2",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  },
+  {
+    "ShortCut": "K.WS46B.121",
+    "RoomType": "EDV Labor",
+    "Location": {
+      "Name": "Standort Kapfenberg",
+      "Address": "Werk-VI-Strasse 46",
+      "PostCode": "8605"
+    },
+    "RoomNumber": "103",
+    "Floor": "1",
+    "MaintenanceActivities": [
+      {
+        "Description": "Reinigung",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "Fenster wurden gereinigt"
+      },
+      {
+        "Description": "Ausmalen",
+        "Date": "2019-11-05",
+        "Time": "14:23",
+        "Remark": "-"
+      }
+    ]
+  }
+]
