@@ -3,6 +3,8 @@ function getNewForm(data){
 
     let header;
     let flag;
+    let disabled = "";
+    let required = "";
     if(data == null) {
         data = {
             R_Id : '',
@@ -19,10 +21,12 @@ function getNewForm(data){
         };
         header = "Neuen Raum einfügen";
         flag = "new";
+        required = "required";
     } else {
         data = data[0];
         header = "Raum " + data.Shortcut +" bearbeiten";
-        flag = "edit"
+        flag = "edit";
+        disabled = "disabled";
     }
 
 
@@ -45,7 +49,7 @@ function getNewForm(data){
                         <br class="inputHeader">
                         <input type="hidden" id="R_Id" value="${data.R_Id}" name="R_Id"/>
                         <input type="hidden" id="flag" value="${flag}" name="flag"/>
-                        <input class="inputField" type="text" id="ShortCut" placeholder="Kurzbezeichnung" name="Shortcut" value="${data.Shortcut}" required> 
+                        <input class="inputField" type="text" id="ShortCut" placeholder="Kurzbezeichnung" name="Shortcut" value="${data.Shortcut}" ${required} ${disabled}> 
                         
                         <input class="inputField" type="text" id="RoomType" placeholder="Raumtyp" name="Roomtype" value="${data.Roomtype}" required> 
                         <input class="inputField" type="text" id="RoomNumber" placeholder="Raumnummer" name="Number" value="${data.Number}" required> 
@@ -63,7 +67,7 @@ function getNewForm(data){
                         <input class="inputField" type="text" id="MA_Remark" placeholder="Anmerkung" name="Remark" value="${data.Remark}"> 
 
                         <p class="inputHeader">* Rote Felder sind Pflichtfelder</p> 
-                        <button id="submit" class="btn">Daten hinzufügen</button><br> 
+                        <button id="submit" class="btn">Speichern</button><br> 
                     </form>
                     <br>
                         <a href="/"><button id="back" class="btn">Zurück</button></a><br> 
