@@ -100,7 +100,7 @@ const server = http.createServer((request, response) => {
             error => console.log(error),
         )
     }*/
-    else if (URLparams.includes("update") && request.method === "POST"){
+    /*else if (URLparams.includes("update") && request.method === "POST"){
         console.log("UPDATE set")
         console.log(URLparams[2])
         let body = [];
@@ -180,12 +180,13 @@ const server = http.createServer((request, response) => {
         )
     }
     else {
-        dbModule.getOverview(db).then(
+        send(response, 200,{ 'content-type': 'text/html' }, getForm());
+        /*dbModule.getOverview(db).then(
             data => {
                 send(response, 200,{ 'content-type': 'text/html' }, getForm());
             },
             error => send(response, 404,{"content-type": "text/plain"},error),
-        );
+        );*/
 
 
     }

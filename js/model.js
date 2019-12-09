@@ -1,4 +1,4 @@
-const db_file_path = '../db/rooms2.db';
+const db_file_path = '../db/rooms.db';
 const db_script_path = '../db/basic-db-script-01.sql';
 
 function open_db() {
@@ -127,7 +127,6 @@ async function getOverview(db) {
             });
 
         });
-
 }
 /*
 async function getOverviewById(db, id) {
