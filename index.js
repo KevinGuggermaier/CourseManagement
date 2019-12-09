@@ -13,6 +13,19 @@ const getForm = require("./views/form");
 const getFormForEdit = require("./views/edit");
 const getNewForm = require("./views/new");
 
+
+const page404 = `<!DOCTYPE html>
+<html>
+    <head>
+        <title>Seite wurde nicht gefunden</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Seite nicht gefunden!</h1>
+    </body>
+</html>`;
+
+
 const server = http.createServer((request, response) => {
     const URLparams = request.url.split("/");
 

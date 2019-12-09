@@ -1,17 +1,6 @@
 const fs = require("fs");
 const path = require('path');
 
-const page404 = `<!DOCTYPE html>
-<html>
-    <head>
-        <title>Seite wurde nicht gefunden</title>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <h1>Seite nicht gefunden!</h1>
-    </body>
-</html>`;
-
 function send(res, statusCode, header, body) {
     res.writeHead(statusCode, header);
     res.end(body);
@@ -19,7 +8,6 @@ function send(res, statusCode, header, body) {
 
 function sendFile(res, req, encoding = "") {
     const filePath = path.resolve(__dirname, "../" + req.url);
-    //console.log(filePath);
     fs.readFile(filePath, encoding, function (err, data) {
        if(err) {
            res.statusCode = 404;

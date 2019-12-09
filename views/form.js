@@ -7,7 +7,7 @@ function getForm(){
     const form = `<!DOCTYPE html>
     <html lang="de">
         <head>
-        <title>Course Management System</title>
+        <title>Kurs Management System | Home</title>
     <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

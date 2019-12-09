@@ -1,6 +1,8 @@
 function getNewForm(data){
-    console.log(data)
+    console.log(data);
 
+    let header;
+    let flag;
     if(data == null) {
         data = {
             R_Id : '',
@@ -15,17 +17,15 @@ function getNewForm(data){
             Date : '',
             Remark : ''
         };
+        header = "Neuen Raum einfügen";
+        flag = "new";
     } else {
         data = data[0];
-    }
-
-    let header = "Neuen Raum einfügen";
-    let flag = "new";
-
-    if(data.R_id) {
         header = "Raum " + data.Shortcut +" bearbeiten";
         flag = "edit"
     }
+
+
 
     const form =` <!DOCTYPE html> 
         <html> 
@@ -64,6 +64,7 @@ function getNewForm(data){
                         <p class="inputHeader">* Rote Felder sind Pflichtfelder</p> 
                         <button id="submit" class="btn">Daten hinzufügen</button><br> 
                     </form>
+                    <br>
                         <a href="/"><button id="back" class="btn">Zurück</button></a><br> 
                     </div> 
                     <br> 
@@ -76,45 +77,5 @@ function getNewForm(data){
 
     return form;
 }
-/*
-function insertSelection(item){
-    let val = `<select id="roomType" name="Roomtype" required>`;
-    val += `<option value="" disabled selected>Raumtyp</option>`;
-    if(item != null) {
-        for (let i = 0; i < item.length; i++) {
-            val += `<option value="${item[i].Roomtype_Id}">${item[i].Roomtype}</option>`;
-        }
-    }
-    val += `</select>`;
-    return val
-}
-
-function insertSelectionLocation(item){
-    console.log(item);
-    let val = `<select id="location" name="Name" required>`;
-    val += `<option value="" disabled selected>Ort</option>`;
-    if(item != null) {
-        for (let i = 0; i < item.length; i++) {
-            val += `<option value="${item[i].Location_Id}">${item[i].Name}</option>`;
-        }
-    }
-    val += `</select>`;
-
-    return val
-}
-
-function insertSelectionMainDesc(item){
-    let val = `<select id="mainDesc" name="Description" required>`;
-    val += `<option value="" disabled selected>Bezeichnung</option>`;
-    if(item != null) {
-        for (let i = 0; i < item.length; i++) {
-            val += `<option value="${item[i].Maintenance_Description_Id}">${item[i].Description}</option>`;
-        }
-    }
-    val += `</select>`;
-
-    return val
-}
-*/
 
 module.exports = getNewForm;
