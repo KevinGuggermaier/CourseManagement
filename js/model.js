@@ -1,5 +1,4 @@
 const db_file_path = '../db/rooms.db';
-const db_script_path = '../db/basic-db-script-01.sql';
 
 function open_db() {
     let sqlite = require('sqlite3').verbose();
@@ -14,18 +13,6 @@ function open_db() {
     });
     return db;
 }
-
-/*
-async function initialize_database(db) {
-    let fs = require('fs');
-    await fs.readFile(db_script_path, 'utf8', async function(err, contents) {
-        //console.log("Initializing database. " + contents);
-        await db.run(contents, function (err, rows) {
-            console.log("error " + err);
-            console.log("results " + rows);
-        });
-    });
-}*/
 
 function getOverviewRoom(db){
     return new Promise((resolve, reject) => {
@@ -57,7 +44,6 @@ function getOverviewRoomById(db, id){
 function selectAllFromRoom(db, Shortcut) {
     return new Promise((resolve, reject) => {
         const query = "SELECT * FROM Room WHERE Shortcut = " + Shortcut;
-
         db.all(query, (error, results) => {
             if(error) {
                 reject(error);
@@ -65,17 +51,28 @@ function selectAllFromRoom(db, Shortcut) {
                 resolve(results);
             }
         });
-
     });
-
 }
 
+function remove(db, data){
+    console.log("[Delete]");
+    let deletionRoom = removeRoom(db,data);
+    let deletionMaintenance = removeMaintenance(db,data);
+    return Promise.all([deletionRoom,deletionMaintenance]);
+}
 
+function removeRoom(db, data){
+    console.log("remove room data entry %s", data)
+}
+
+function removeMaintenance(db, data){
+    console.log("remove maintenance data entry %s", data)
+}
 
 function insert(db, data) {
     console.log("[Insert]");
     let insertionRoom = insertRoom(db,data);
-    let insertionMaintenance = insertMaintenace(db,data);
+    let insertionMaintenance = insertMaintenance(db,data);
     return Promise.all([insertionRoom,insertionMaintenance]);
 }
 
@@ -96,7 +93,7 @@ function insertRoom(db, data) {
     });
 }
 
-function insertMaintenace(db, data) {
+function insertMaintenance(db, data) {
     console.log("insert new maintenance activity.");
     data.Shortcut = data.Shortcut.toString().toUpperCase();
     const query1 = "Select * from Maintenance_Activity Where Shortcut = " + '"' + data.Shortcut + '"';
@@ -121,24 +118,12 @@ function insertMaintenace(db, data) {
             });
         }
     });
-    /*return new Promise((resolve, reject) => {
-        const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
-        console.log(data);
-        db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
-            if (error) {
-                reject(error);
-            } else {
-                console.log(results);
-                resolve(results);
-            }
-        });
-    });*/
 }
 
 function update(db, data) {
     console.log("[Update]");
     let updateRoom1 = updateRoom(db,data);
-    let updateMaintenance1 = updateMaintenace(db,data);
+    let updateMaintenance1 = updateMaintenance(db,data);
     return Promise.all([updateRoom1,updateMaintenance1]);
 }
 
@@ -158,7 +143,7 @@ function updateRoom(db, data) {
     });
 }
 
-function updateMaintenace(db, data) {
+function updateMaintenance(db, data) {
     console.log("update maintenance activity.");
 
     const queryMain = "Select * from Maintenance_Activity where Shortcut = " + '"' + data.Shortcut + '"';
@@ -181,7 +166,7 @@ function updateMaintenace(db, data) {
 
                     });
             });
-        }else
+        } else
         {
             return new Promise((resolve, reject) => {
                 db.run('UPDATE Maintenance_Activity SET Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + '"' + data.Shortcut + '"',
@@ -196,21 +181,7 @@ function updateMaintenace(db, data) {
                     });
             });
         }
-
     });
-
-    /*return new Promise((resolve, reject) => {
-        const query = 'UPDATE Maintenance_Activity SET Date = ?, Remark = ?, Description = ?, Shortcut = ? WHERE Shortcut = ' + '"' + data.Shortcut + '"';
-        console.log(data);
-        db.run(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
-            if (error) {
-                reject(error);
-            } else {
-                console.log(results);
-                resolve(results);
-            }
-        });
-    });*/
 }
 
 function close_db(db) {

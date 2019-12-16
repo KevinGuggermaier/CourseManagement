@@ -100,8 +100,8 @@ function fill_table(json_object,else_str) {
                     case 7:
                         let hrefString = "/edit/" + currentRoom.R_Id;
                         cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
+                        cell.innerHTML += `<button id="RemoveRoom" onclick="delete_room('${currentRoom.Shortcut}', ${currentRoom.R_Id})" class="btn">Löschen</button><br>`
                         break;
-
                 }
             }
         }
@@ -149,9 +149,7 @@ async function on_search(){
        }
 
     }, 500);
-
 }
-
 
 function search_data(search_string, jsonObject){
 
@@ -180,6 +178,16 @@ function search_data(search_string, jsonObject){
     search_string.pop();
     return search_data(search_string, JSON.parse(newStr));
 }
+
+
+function delete_room(shortcut, room_id){
+    console.log("Delete %d", room_id)
+    if (confirm("Soll der Raum " + shortcut + " wirklich gelöscht werden?")) {
+
+    } else {
+    }
+}
+
 
 
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
