@@ -32,8 +32,8 @@ function getPage404() {
     return page404;
 }
 
-function getPageDuplicat() {
-    const pageDuplicat = `<!DOCTYPE html>
+function getPageDuplicate() {
+    const pageDuplicate = `<!DOCTYPE html>
     <html>
         <head>
             <title>Duplikat</title>
@@ -48,23 +48,22 @@ function getPageDuplicat() {
             </div>
         </body>
     </html>`;
-    return pageDuplicat;
+    return pageDuplicate;
 }
-
 
 const server = http.createServer((request, response) => {
     const URLparams = request.url.split("/");
-
     const db = dbModule.open_db();
 
+    console.log(URLparams)
     console.log(request.url)
     if(URLparams.includes("testPage")) {
-        send(response,200,{'content-type':'text/html'}, getPageDuplicat())
-    } else if(URLparams.includes("edit") && !isNaN(URLparams[2])) {
+        send(response,200,{'content-type':'text/html'}, getPageDuplicate())
+    }
+    else if(URLparams.includes("edit") && !isNaN(URLparams[2])) {
         console.log("edit :)");
         console.log(URLparams[2])
         if (URLparams.length == 3 && !isNaN(URLparams[2])) {
-            console.log("TEST" , URLparams)
             dbModule.getOverviewRoomById(db, URLparams[2]).then(
                 data => {
                     send(response, 200, {'content-type': 'text/html'}, getNewForm(data))
@@ -72,11 +71,12 @@ const server = http.createServer((request, response) => {
                 error => send(response, 404, {'content-type': 'text/html'}, getPage404())
             )
         }
-
-    } else if(URLparams.includes("insertNewRoom")) {
+    }
+    else if(URLparams.includes("insertNewRoom")) {
         send(response,200,{ 'content-type' : 'text/html'}, getNewForm());
 
-    } else if(URLparams.includes("save") && request.method === "POST") {
+    }
+    else if(URLparams.includes("save") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         form.parse(request, (err, data, files) => {
             console.log('data', data);
@@ -85,18 +85,22 @@ const server = http.createServer((request, response) => {
             dbModule.save(t,data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
-                error => send(response, 404, {'content-type':'text/html'}, getPageDuplicat())
+                error => send(response, 404, {'content-type':'text/html'}, getPageDuplicate())
             );
-
             dbModule.close_db(t);
         });
-    } else if(URLparams.includes("images")) {
+    }
+
+    else if(URLparams.includes("images")) {
         sendFile(response, request)
 
-    }else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/main.js" || request.url === "/edit/js/inputValid.js") {
+    }
+
+    else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/main.js" || request.url === "/edit/js/inputValid.js") {
         request.url = request.url.toString().slice(5, request.url.toString().length);
         sendFile(response, request, 'utf8');
     }
+
     else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js" || request.url === "/js/inputValid.js") {
         sendFile(response, request, 'utf8');
 
@@ -108,15 +112,33 @@ const server = http.createServer((request, response) => {
                 response.write(JSON.stringify(data)); // You Can Call Response.write Infinite Times BEFORE response.end
                 response.end();
             },
-            error => send(response, 404, {'content-type': 'text/html'}, getPage404()),
-        )
+            error => send(response, 404, {'content-type': 'text/html'}, getPage404()),)
     }
+
+    else if(URLparams.includes("remove") && !isNaN(URLparams[2]))
+    {
+       let shortcut = URLparams[2].split(';')[0];
+       let room_id = URLparams[2].split(';')[1];
+
+        if (confirm("Soll der Raum " + shortcut + " wirklich gelöscht werden?")) {
+            const t  = dbModule.open_db();
+            dbModule.remove(room_id).then(
+                data => {
+                    send(response, 200, {'content-type': 'text/html'}, getForm()); },
+                error => { redirect(response,{'content-type':'text/plain'},"/");
+                    alert("Datensatz konnte nicht gelöscht werden!")
+                    send(response, 200, {'content-type': 'text/html'}, getForm());
+                }
+            );
+            dbModule.close_db(t);
+        }
+        console.log("Delete %d", room_id);
+    }
+
     else {
         send(response, 200, {'content-type': 'text/html'}, getForm());
     }
-
     dbModule.close_db(db);
-
 });
 
 

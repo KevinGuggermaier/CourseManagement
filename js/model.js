@@ -54,19 +54,31 @@ function selectAllFromRoom(db, Shortcut) {
     });
 }
 
-function remove(db, data){
+function remove(db, id){
     console.log("[Delete]");
-    let deletionRoom = removeRoom(db,data);
-    let deletionMaintenance = removeMaintenance(db,data);
-    return Promise.all([deletionRoom,deletionMaintenance]);
+    let deletionRoom = removeRoom(db,id);
+ //  let deletionMaintenance = removeMaintenance(db,id);
+    return Promise.all([deletionRoom]); //,deletionMaintenance]);
 }
 
-function removeRoom(db, data){
-    console.log("remove room data entry %s", data)
+function removeRoom(db, id){
+    console.log("remove room data entry %s", id);
+    return new Promise((resolve, reject) => {
+        const query = 'DELETE Room WHERE Shortcut = ?';
+        db.all(query, [id], (error, results) => {
+            if (error) {
+                reject(error);
+            } else {
+                console.log(results);
+                resolve(results);
+            }
+        });
+    });
 }
 
-function removeMaintenance(db, data){
-    console.log("remove maintenance data entry %s", data)
+function removeMaintenance(db, id){
+    console.log("remove maintenance data entry %s", id);
+
 }
 
 function insert(db, data) {
@@ -199,6 +211,7 @@ module.exports = {
     close_db,
     getOverviewRoom,
     getOverviewRoomById,
+    remove,
     save(db,data) {
         if(!data.R_Id) {
             return insert(db,data)

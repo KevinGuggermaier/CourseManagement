@@ -4,13 +4,6 @@ let local_json_path = './resources/Test_data.json';
 let headers = ["Kurzbezeichnung","Raumtyp","Adresse","Raumnummer","Stockwerk","Instandhaltung","Aktion"];
 
 let json_object = null;
-/*
-let model = require('./model');
-
-const http = require('http');
-//#######################################################
-
-*/
 
 // Event listener
 window.addEventListener("load", function () {
@@ -20,9 +13,10 @@ window.addEventListener("load", function () {
     json_object = null;
     const Http = new XMLHttpRequest();
     const url='http://localhost:8080/getJsonRoom';
+
     Http.open("GET", url);
     Http.onprogress = function () {
-        console.log("PROGRESS:", Http.responseText);
+        //console.log("PROGRESS:", Http.responseText);
         jsonObj = Http.responseText;
         let str ="";
         json_object = JSON.parse(jsonObj);
@@ -60,7 +54,7 @@ function fill_table(json_object,else_str) {
                 let cell = null;
                 if(columnCnt < 7){
                     cell = row.insertCell(columnCnt);
-                    console.log(key)
+                    //console.log(key)
                     cell.setAttribute("class", "cells");
                     if (columnCnt === 0) {
                         cell.setAttribute("class", "cells, firstCellInRow");
@@ -71,7 +65,6 @@ function fill_table(json_object,else_str) {
                     }
                     if(columnCnt < 7) {
                         cell.innerHTML = "<span class='lineHeaders'>" + headers[columnCnt] + "</span>"; // current header for mobile
-
                     }
                 }
 
@@ -100,7 +93,8 @@ function fill_table(json_object,else_str) {
                     case 7:
                         let hrefString = "/edit/" + currentRoom.R_Id;
                         cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
-                        cell.innerHTML += `<button id="RemoveRoom" onclick="delete_room('${currentRoom.Shortcut}', ${currentRoom.R_Id})" class="btn">Löschen</button><br>`
+                        let removeHrefString = "/remove/" + currentRoom.Shortcut + ";" + currentRoom.R_Id
+                        cell.innerHTML += `<a href=${removeHrefString}><button id="RemoveRoom" class="btn">Löschen</button><br>`
                         break;
                 }
             }
@@ -178,17 +172,5 @@ function search_data(search_string, jsonObject){
     search_string.pop();
     return search_data(search_string, JSON.parse(newStr));
 }
-
-
-function delete_room(shortcut, room_id){
-    console.log("Delete %d", room_id)
-    if (confirm("Soll der Raum " + shortcut + " wirklich gelöscht werden?")) {
-
-    } else {
-    }
-}
-
-
-
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
 
