@@ -38,7 +38,7 @@ function getNewForm(data){
                 <meta charset="UTF-8"> 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
                 <link href="css/main.css" rel="stylesheet" type="text/css"/> 
-               
+                <link href="js/inputValid.js" rel="stylesheet" type="text/javascript" >
             </head>
             <body> 
                 <div id="courseManagement"> 
@@ -73,10 +73,10 @@ function getNewForm(data){
                         <a href="/"><button id="back" class="btn">Zurück</button></a><br> 
                     </div> 
                     <br> 
-                    
+             
                     <br> 
                 </div> 
-               
+               <script src="js/inputValid.js" type="text/javascript"></script>
             </body>
         </html>`;
 

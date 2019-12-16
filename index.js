@@ -93,11 +93,11 @@ const server = http.createServer((request, response) => {
     } else if(URLparams.includes("images")) {
         sendFile(response, request)
 
-    }else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/main.js") {
+    }else if(request.url === "/edit/css/main.css" || request.url === "/edit/css/table.css" || request.url === "/edit/js/main.js" || request.url === "/edit/js/inputValid.js") {
         request.url = request.url.toString().slice(5, request.url.toString().length);
         sendFile(response, request, 'utf8');
     }
-    else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js") {
+    else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js" || request.url === "/js/inputValid.js") {
         sendFile(response, request, 'utf8');
 
     }else if(URLparams.includes("getJsonRoom") && request.method === "GET") {
