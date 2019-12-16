@@ -93,7 +93,7 @@ function fill_table(json_object,else_str) {
                     case 7:
                         let hrefString = "/edit/" + currentRoom.R_Id;
                         cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
-                        let removeHrefString = "/remove/" + currentRoom.Shortcut + ";" + currentRoom.R_Id
+                        let removeHrefString = "/remove/" + currentRoom.Shortcut //+ ";" + currentRoom.R_Id
                         cell.innerHTML += `<a href=${removeHrefString}><button id="RemoveRoom" class="btn">Löschen</button><br>`
                         break;
                 }

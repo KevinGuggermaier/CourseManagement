@@ -57,9 +57,11 @@ const server = http.createServer((request, response) => {
 
     console.log(URLparams)
     console.log(request.url)
+
     if(URLparams.includes("testPage")) {
         send(response,200,{'content-type':'text/html'}, getPageDuplicate())
     }
+
     else if(URLparams.includes("edit") && !isNaN(URLparams[2])) {
         console.log("edit :)");
         console.log(URLparams[2])
@@ -72,10 +74,12 @@ const server = http.createServer((request, response) => {
             )
         }
     }
+
     else if(URLparams.includes("insertNewRoom")) {
         send(response,200,{ 'content-type' : 'text/html'}, getNewForm());
 
     }
+
     else if(URLparams.includes("save") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         form.parse(request, (err, data, files) => {
@@ -104,7 +108,9 @@ const server = http.createServer((request, response) => {
     else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js" || request.url === "/js/inputValid.js") {
         sendFile(response, request, 'utf8');
 
-    }else if(URLparams.includes("getJsonRoom") && request.method === "GET") {
+    }
+
+    else if(URLparams.includes("getJsonRoom") && request.method === "GET") {
         dbModule.getOverviewRoom(db).then(
             data => {
                 console.log(data)
@@ -115,14 +121,15 @@ const server = http.createServer((request, response) => {
             error => send(response, 404, {'content-type': 'text/html'}, getPage404()),)
     }
 
-    else if(URLparams.includes("remove") && !isNaN(URLparams[2]))
+    else if(URLparams.includes("remove"))
     {
-       let shortcut = URLparams[2].split(';')[0];
-       let room_id = URLparams[2].split(';')[1];
+       // send(response,200,{ 'content-type' : 'text/html'}, getNewForm());
+       // let shortcut = URLparams[2]//.split(';')[0];
+       // let room_id = URLparams[1]//.split(';')[1];
 
-        if (confirm("Soll der Raum " + shortcut + " wirklich gelöscht werden?")) {
-            const t  = dbModule.open_db();
-            dbModule.remove(room_id).then(
+        let confirm = require('confirm-dailog')
+        confirm("Soll der Raum " /*+ shortcut*/ + " wirklich gelöscht werden?").then(function() {
+            dbModule.remove(1).then(
                 data => {
                     send(response, 200, {'content-type': 'text/html'}, getForm()); },
                 error => { redirect(response,{'content-type':'text/plain'},"/");
@@ -130,9 +137,9 @@ const server = http.createServer((request, response) => {
                     send(response, 200, {'content-type': 'text/html'}, getForm());
                 }
             );
-            dbModule.close_db(t);
-        }
-        console.log("Delete %d", room_id);
+        }, function() {
+            // no
+        })
     }
 
     else {
