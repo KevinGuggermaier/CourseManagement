@@ -93,8 +93,8 @@ function fill_table(json_object,else_str) {
                     case 7:
                         let hrefString = "/edit/" + currentRoom.R_Id;
                         cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
-                        let removeHrefString = "/remove/" + currentRoom.Shortcut //+ ";" + currentRoom.R_Id
-                        cell.innerHTML += `<a href=${removeHrefString}><button id="RemoveRoom" class="btn">Löschen</button><br>`
+                        let removeHrefString = "/remove/" + currentRoom.Shortcut + "/" + currentRoom.R_Id;
+                        cell.innerHTML += `<a href=${removeHrefString} onclick="return confirm('Möchten Sie den Eintrag Löschen');"><button id="RemoveRoom" class="btn">Löschen</button><br>`
                         break;
                 }
             }
@@ -172,5 +172,6 @@ function search_data(search_string, jsonObject){
     search_string.pop();
     return search_data(search_string, JSON.parse(newStr));
 }
+
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
 

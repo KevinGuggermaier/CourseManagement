@@ -236,9 +236,9 @@ function locationStreet() {
     if(value.length === 0){
         return;
     }
-    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9]+$/)){
+    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9,ß]+$/)){
         value = value.slice(0, value.length-1);
-        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9]+$/)){
+        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9,ß]+$/)){
             value = null;
             alert("Unerlaubte Eingabe \nNur Buchstaben und Ziffern erlaubt");
         }else{

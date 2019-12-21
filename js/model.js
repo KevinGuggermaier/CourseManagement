@@ -54,18 +54,18 @@ function selectAllFromRoom(db, Shortcut) {
     });
 }
 
-function remove(db, id){
+function remove(db, shortCut, roomId){
     console.log("[Delete]");
-    let deletionRoom = removeRoom(db,id);
- //  let deletionMaintenance = removeMaintenance(db,id);
-    return Promise.all([deletionRoom]); //,deletionMaintenance]);
+    let removeMain = removeMaintenance(db, shortCut);
+    let remRoom = removeRoom(db, roomId);
+    return Promise.all([remRoom, removeMain])
 }
 
 function removeRoom(db, id){
     console.log("remove room data entry %s", id);
     return new Promise((resolve, reject) => {
-        const query = 'DELETE Room WHERE Shortcut = ?';
-        db.all(query, [id], (error, results) => {
+        const query = 'DELETE FROM Room WHERE R_Id = ' + id;
+        db.all(query, (error, results) => {
             if (error) {
                 reject(error);
             } else {
@@ -76,8 +76,18 @@ function removeRoom(db, id){
     });
 }
 
-function removeMaintenance(db, id){
-    console.log("remove maintenance data entry %s", id);
+function removeMaintenance(db, shortCut){
+    console.log("remove maintenance data entry %s", shortCut);
+    return new Promise( (resolve, reject) => {
+        const query = "DELETE FROM Maintenance_Activity WHERE Shortcut = " + '"' + shortCut + '"';
+        db.all(query, (error, result) => {
+            if (error) {
+                reject(error);
+            } else {
+                resolve(result);
+            }
+        })
+    })
 
 }
 
