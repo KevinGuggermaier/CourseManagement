@@ -48,9 +48,9 @@ function checkString(value) {
         return value;
     }
 
-    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ]+$/)){
+    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü,ß, ]+$/)){
         value = value.slice(0, value.length-1);
-        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ]+$/)){
+        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü,ß, ]+$/)){
             alert("Unerlaubte Eingabe \nNur Buchstaben erlaubt");
             return  null;
         }else {
@@ -219,9 +219,9 @@ function maRemark(){
     if(value.length === 0){
         return;
     }
-    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9]+$/)){
+    if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü,ß, ,0-9]+$/)){
         value = value.slice(0, value.length-1);
-        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü, ,0-9]+$/)){
+        if(!value.match(/^[a-z,ö,ä,ü,A-Z,Ä,Ö,Ü,ß, ,0-9]+$/)){
             value = null;
             alert("Unerlaubte Eingabe \nNur Buchstaben und Ziffern erlaubt");
         }else{
