@@ -94,7 +94,7 @@ function fill_table(json_object,else_str) {
                         let hrefString = "/edit/" + currentRoom.R_Id;
                         cell.innerHTML += `<a href=${hrefString}><button id="InsertNewRoom" class="btn">Bearbeiten</button></a><br>`
                         let removeHrefString = "/remove/" + currentRoom.Shortcut + "/" + currentRoom.R_Id;
-                        cell.innerHTML += `<a href=${removeHrefString} onclick="return confirm('Möchten Sie den Eintrag Löschen');"><button id="RemoveRoom" class="btn">Löschen</button><br>`
+                        cell.innerHTML += `<a href=${removeHrefString} onclick="return confirm('Möchten Sie den Eintrag wirklich löschen?');"><button id="RemoveRoom" class="btn">Löschen</button><a/><br>`
                         break;
                 }
             }
