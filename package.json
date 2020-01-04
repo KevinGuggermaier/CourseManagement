@@ -4,6 +4,7 @@
   "dependencies": {
     "axios": "latest",
     "formidable": "^1.2.1",
-    "sqlite3": "^4.1.1"
+    "sqlite3": "^4.1.1",
+    "xlsx": "^0.15.4"
   }
 }

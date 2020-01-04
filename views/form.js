@@ -23,10 +23,13 @@ function getForm(){
     <div id="SearchInputDiv">
         <label for="SearchInput"></label><input type="text" id="SearchInput" placeholder="Suche ...">
         </div>
-        <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a><br>
+        <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a>
+        <button id="exportPDfRoom" class="btn">PDF Export</button>
+        <button id="exportExcelRoom" class="btn">Excel Export</button><br>
     
     <br>
     <table id="RoomOverviewTable"></table>
+     <table id="RoomOverviewTable1"></table>
         <br>
         <div id="else_text"></div>
         </div>
