@@ -175,127 +175,40 @@ function search_data(search_string, jsonObject) {
 
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
 
-document.getElementById("exportExcelRoom").addEventListener("click", exportTableToExcel);
+document.getElementById("exportExcelRoom").addEventListener("click", JSONToCSVConvertor);
 
-function exportTableToExcel(filename = '') {
-    createTable();
+function JSONToCSVConvertor() {
+    let index;
+    let arrData = typeof json_object != 'object' ? JSON.parse(json_object) : json_object;
+    let CSV = '';
 
-    var downloadLink;
-    var dataType = 'application/vnd.ms-excel';
-
-    var tableSelect = document.getElementById("RoomOverviewTable1");
-    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
-
-    filename = filename ? filename + '.xls' : 'excel_data.xls';
-    downloadLink = document.createElement("a");
-    document.body.appendChild(downloadLink);
-
-    if (navigator.msSaveOrOpenBlob) {
-        var blob = new Blob(['\ufeff', tableHTML], {
-            type: dataType
-        });
-        navigator.msSaveOrOpenBlob(blob, filename);
-    } else {
-        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
-        downloadLink.download = filename;
-        downloadLink.click();
+    // label
+    let row = "";
+    for (index in arrData[0]) {
+        row += index + ',';
     }
-}
+    row = row.slice(0, -1);
+    CSV += row + '\r\n';
 
-function createTable() {
-    document.getElementById("RoomOverviewTable1").innerHTML = "";
-    let table = document.getElementById("RoomOverviewTable1");
-    let row = table.rows;
-    let i = 0;
+    // data
+    for (let i = 0; i < arrData.length; i++) {
+        row = "";
 
-    for (i = 0; i < json_object.length; i++) {
-        let currentRoom = json_object[i];
-        row = table.insertRow(i);
-
-        let columnCnt = 0;
-        for (let key of Object.keys(currentRoom)) {
-            let cell = null;
-            if (columnCnt < 6) {
-                cell = row.insertCell(columnCnt);
-            }
-
-            columnCnt++;
-            switch (columnCnt) {
-                case 1:
-                    cell.innerHTML += currentRoom.Shortcut;
-                    break;
-                case 2:
-                    cell.innerHTML += currentRoom.Roomtype;
-                    break;
-                case 3:
-                    cell.innerHTML += currentRoom.Postcode + "<br>" + currentRoom.City + "<br>" + currentRoom.Address;
-                    break;
-                case 4:
-                    cell.innerHTML += currentRoom.Number;
-                    break;
-                case 5:
-                    cell.innerHTML += currentRoom.Floor;
-                    break;
-                case 6:
-                    /*if (currentRoom.MA_Id !== null) {
-                        cell.innerHTML += currentRoom.Remark + "<br>" + currentRoom.Date + "<br>" + currentRoom.Description;
-                    }*/
-                    break;
-            }
-        }
-    }
-}
-
-/*function JSONToCSVConvertor(JSONData, ReportTitle, ShowLabel) {
-    var arrData = typeof JSONData != 'object' ? JSON.parse(JSONData) : JSONData;
-    var CSV = '';
-
-    CSV += ReportTitle + '\r\n\n';
-
-    if (ShowLabel) {
-        var row = "";
-
-        for (var index in arrData[0]) {
-            row += index + ',';
-        }
-
-        row = row.slice(0, -1);
-        CSV += row + '\r\n';
-    }
-
-    for (var i = 0; i < arrData.length; i++) {
-        var row = "";
-
-        var j = 0;
-        for (var index in arrData[i]) {
-
-            console.log(index)
-
-            row += '"' + arrData[i][j][index];
-            j += 1
+        for (index in arrData[i]) {
+            row += arrData[i][index] + ',';
         }
 
         row.slice(0, row.length - 1);
-
         CSV += row + '\r\n';
     }
 
-    if (CSV == '') {
-        alert("Invalid data");
-        return;
-    }
-
-    var fileName = "MyReport_";
-    fileName += ReportTitle.replace(/ /g, "_");
-
-    var uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
-    var link = document.createElement("a");
+    let fileName = "Kurse";
+    let uri = 'data:text/csv;charset=utf-8,' + escape(CSV);
+    let link = document.createElement("a");
     link.href = uri;
-
     link.style = "visibility:hidden";
     link.download = fileName + ".csv";
-
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}*/
+}

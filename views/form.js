@@ -29,7 +29,6 @@ function getForm(){
     
     <br>
     <table id="RoomOverviewTable"></table>
-     <table id="RoomOverviewTable1"></table>
         <br>
         <div id="else_text"></div>
         </div>
