@@ -176,6 +176,7 @@ function search_data(search_string, jsonObject) {
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
 
 document.getElementById("exportExcelRoom").addEventListener("click", JSONToCSVConvertor);
+document.getElementById("exportPDfRoom").addEventListener("click", JSONToPDFConvertor);
 
 function JSONToCSVConvertor() {
     let index;
@@ -211,4 +212,32 @@ function JSONToCSVConvertor() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+}
+
+function JSONToPDFConvertor() {
+
+    const pdf = new jsPDF('p', 'pt', 'letter');
+    source = document.getElementById("RoomOverviewTable");
+    specialElementHandlers = {
+        '#bypassme': function (element, renderer) {
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+
+    pdf.fromHTML(
+        source,
+        margins.left,
+        margins.top, {
+            'elementHandlers': specialElementHandlers
+        },
+        function (dispose) {
+            pdf.save('Kurse.pdf');
+        }
+        , margins);
 }

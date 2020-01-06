@@ -4,6 +4,8 @@
   "dependencies": {
     "axios": "latest",
     "formidable": "^1.2.1",
+    "jspdf": "^1.5.3",
+    "jspdf-autotable": "^3.2.11",
     "sqlite3": "^4.1.1",
     "xlsx": "^0.15.4"
   }
