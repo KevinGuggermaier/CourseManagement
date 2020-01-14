@@ -11,6 +11,8 @@ function getForm(){
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
         <script src="jspdf.min.js"></script>
         <script src="jspdf.plugin.autotable.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      
     <meta charset="UTF-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +29,13 @@ function getForm(){
         <label for="SearchInput"></label><input type="text" id="SearchInput" placeholder="Suche ...">
         </div>
         <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a>
-        <button id="exportPDfRoom" class="btn">PDF Export</button>
-        <button id="exportExcelRoom" class="btn">Excel Export</button><br>
-    
+                <button id="exportPDfRoom" class="btn">PDF Export</button>
+                <button id="exportExcelRoom" class="btn">Excel Export</button>
+                
+                <div style="float: right">
+                <input type="file" id="importedFile" accept=".csv" >  <button id="importCsv" class="btn">Csv importieren</button>
+                </div>
+                <br>    
     <br>
     <table id="RoomOverviewTable"></table>
         <br>
