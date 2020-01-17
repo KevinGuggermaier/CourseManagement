@@ -103,7 +103,7 @@ function insertRoom(db, data) {
     data.Shortcut = data.Shortcut.toString().toUpperCase();
     return new Promise((resolve, reject) => {
         const query = 'INSERT INTO Room (Shortcut, Number, Floor, Roomtype, City, Address, Postcode) Values (?, ?, ?, ?, ?, ?, ?)';
-        console.log(data);
+        console.log("Insert data (Room): " + JSON.stringify(data));
         db.all(query, [data.Shortcut, data.Number, data.Floor, data.Roomtype, data.City, data.Address, data.Postcode], (error, results) => {
             if (error) {
                 reject(error);
@@ -128,7 +128,7 @@ function insertMaintenance(db, data) {
         if(res.length === 0){
             return new Promise((resolve, reject) => {
                 const query = 'INSERT INTO Maintenance_Activity (Date, Remark, Description, Shortcut) Values (?, ?, ?, ?)';
-                console.log(data);
+                console.log("Insert data (Maintenance): " + JSON.stringify(data));
                 db.all(query, [data.Date, data.Remark, data.Description, data.Shortcut],(error, results) => {
                     if (error) {
                         reject(error);

@@ -84,9 +84,7 @@ const server = http.createServer((request, response) => {
     else if(URLparams.includes("save") && request.method === "POST") {
         const form = new formidable.IncomingForm();
         form.parse(request, (err, data, files) => {
-            //console.log('data', data);
             const t  = dbModule.open_db();
-
             dbModule.save(t, data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
@@ -114,7 +112,6 @@ const server = http.createServer((request, response) => {
     else if(URLparams.includes("getJsonRoom") && request.method === "GET") {
         dbModule.getOverviewRoom(db).then(
             data => {
-                //console.log(data)
                 response.writeHead(200, {"Content-Type": "application/json"});
                 response.write(JSON.stringify(data)); // You Can Call Response.write Infinite Times BEFORE response.end
                 response.end();
@@ -136,25 +133,30 @@ const server = http.createServer((request, response) => {
     }
         else if (request.url == '/fileupload') {
             let form = new formidable.IncomingForm();
-            let fs = require('fs');
+
             form.parse(request, function (err, fields, files) {
                 let filePath = files.filetoupload.path;
-                fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
-                    if (!err) {
-                        console.log('received data: ' + data);
-                        let csv = require("csvtojson");
-                        csv()
-                            .fromFile(filePath)
-                            .then(function(jsonArrayObj){ //when parse finished, result will be emitted here.
-                                console.log(jsonArrayObj);
-                            })
 
-                    } else {
-                        console.log(err);
-                    }
-                });
-            });
-        }
+                if(filePath) {
+                      let csv = require("csvtojson");
+                      csv()
+                            .fromFile(filePath)
+                            .then(function(rooms){ //when parse finished, result will be emitted here.
+                                const t  = dbModule.open_db();
+                                rooms.forEach(function(room) {
+                                    room["flag"] = "new";
+                                    delete room.R_Id;
+                                    dbModule.save(t, room).then(
+                                        data => { redirect(response,{'content-type':'text/plain'},"/");
+                                        },
+                                        error => send(response, 404, {'content-type':'text/html'}, getPageDuplicate())
+                                    );
+                                 });
+                                dbModule.close_db(t);
+                      });
+                 }
+        });
+    }
     else {
         send(response, 200, {'content-type': 'text/html'}, getForm());
     }
