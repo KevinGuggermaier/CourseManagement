@@ -31,11 +31,12 @@ function getForm(){
         <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a>
                 <button id="exportPDfRoom" class="btn">PDF Export</button>
                 <button id="exportExcelRoom" class="btn">Excel Export</button>
-                
-                <div style="float: right">
-                <input type="file" id="importedFile" accept=".csv" >  <button id="importCsv" class="btn">Csv importieren</button>
-                </div>
-                <br>    
+          
+        <form action="fileupload" method="post" enctype="multipart/form-data">
+            <input type="file" name="filetoupload">
+            <input type="submit" value="Import">
+        </form>
+        <br>    
     <br>
     <table id="RoomOverviewTable"></table>
         <br>

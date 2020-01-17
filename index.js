@@ -53,6 +53,7 @@ function getPageDuplicate() {
 
 const server = http.createServer((request, response) => {
     const URLparams = request.url.split("/");
+    console.log(URLparams)
     const db = dbModule.open_db();
 
     //console.log(URLparams)
@@ -86,7 +87,7 @@ const server = http.createServer((request, response) => {
             //console.log('data', data);
             const t  = dbModule.open_db();
 
-            dbModule.save(t,data).then(
+            dbModule.save(t, data).then(
                 data => { redirect(response,{'content-type':'text/plain'},"/");
             },
                 error => send(response, 404, {'content-type':'text/html'}, getPageDuplicate())
@@ -133,13 +134,46 @@ const server = http.createServer((request, response) => {
             error => send(response, 404, {'content-type': 'text/html'}, getPage404()),
         )
     }
-
+        else if (request.url == '/fileupload') {
+            let form = new formidable.IncomingForm();
+            let fs = require('fs');
+            form.parse(request, function (err, fields, files) {
+                let filePath = files.filetoupload.path;
+                fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
+                    if (!err) {
+                        console.log('received data: ' + data);
+                    } else {
+                        console.log(err);
+                    }
+                });
+            });
+        }
     else {
         send(response, 200, {'content-type': 'text/html'}, getForm());
     }
     dbModule.close_db(db);
 });
 
+function load_csv(csv){
+    var lines = csv.split("\n");
+    var result = [];
+
+    var headers=lines[0].split(",");
+
+    for(var i=1;i<lines.length;i++){
+
+        var obj = {};
+        var currentline=lines[i].split(",");
+
+        for(var j=0;j<headers.length;j++){
+            obj[headers[j]] = currentline[j];
+        }
+        json_object.push()
+        result.push(obj);
+    }
+    alert(result);
+    return result;
+}
 
 server.listen(8080, () =>
     console.log("Server is listening to http://localhost:8080"),
