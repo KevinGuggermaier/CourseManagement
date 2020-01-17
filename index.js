@@ -142,6 +142,13 @@ const server = http.createServer((request, response) => {
                 fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
                     if (!err) {
                         console.log('received data: ' + data);
+                        let csv = require("csvtojson");
+                        csv()
+                            .fromFile(filePath)
+                            .then(function(jsonArrayObj){ //when parse finished, result will be emitted here.
+                                console.log(jsonArrayObj);
+                            })
+
                     } else {
                         console.log(err);
                     }
@@ -154,26 +161,7 @@ const server = http.createServer((request, response) => {
     dbModule.close_db(db);
 });
 
-function load_csv(csv){
-    var lines = csv.split("\n");
-    var result = [];
 
-    var headers=lines[0].split(",");
-
-    for(var i=1;i<lines.length;i++){
-
-        var obj = {};
-        var currentline=lines[i].split(",");
-
-        for(var j=0;j<headers.length;j++){
-            obj[headers[j]] = currentline[j];
-        }
-        json_object.push()
-        result.push(obj);
-    }
-    alert(result);
-    return result;
-}
 
 server.listen(8080, () =>
     console.log("Server is listening to http://localhost:8080"),
