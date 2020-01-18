@@ -104,7 +104,7 @@ const server = http.createServer((request, response) => {
         sendFile(response, request, 'utf8');
     }
 
-    else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js" || request.url === "/js/inputValid.js") {
+    else if(request.url === "/css/main.css" || request.url === "/css/table.css" || request.url === "/js/main.js" || request.url === "/js/inputValid.js" || request.url === "/lib/jspdf.plugin.autotable.js") {
         sendFile(response, request, 'utf8');
 
     }

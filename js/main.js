@@ -175,9 +175,6 @@ function search_data(search_string, jsonObject) {
 
 document.getElementById("SearchInput").addEventListener("keyup", on_search);
 
-document.getElementById("exportExcelRoom").addEventListener("click", JSONToCSVConvertor);
-document.getElementById("exportPDfRoom").addEventListener("click", JSONToPDFConvertor);
-
 function JSONToCSVConvertor() {
     let index;
     let arrData = typeof json_object != 'object' ? JSON.parse(json_object) : json_object;
@@ -213,8 +210,7 @@ function JSONToCSVConvertor() {
     link.click();
     document.body.removeChild(link);
 }
-
-function JSONToPDFConvertor() {
+/*function JSONToPDFConvertor() {
 
     const pdf = new jsPDF('p', 'pt', 'letter');
     source = document.getElementById("RoomOverviewTable");
@@ -240,4 +236,20 @@ function JSONToPDFConvertor() {
             pdf.save('Kurse.pdf');
         }
         , margins);
+}*/
+
+/*
+function generatePDF() {
+    import jsPDF from 'jspdf';
+    import 'jspdf-autotable';
+    var doc = new jsPDF();
+
+    doc.autoTable({html: '#RoomOverviewTable'});
+    doc.save("KursManagementSystem-Räume.pdf");
 }
+
+
+document.getElementById("exportPDfRoom").addEventListener("click", generatePDF);
+*/
+
+document.getElementById("exportExcelRoom").addEventListener("click", JSONToCSVConvertor);

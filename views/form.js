@@ -9,8 +9,7 @@ function getForm(){
         <head>
         <title>Kurs Management System | Home</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
-        <script src="jspdf.min.js"></script>
-        <script src="jspdf.plugin.autotable.min.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       
     <meta charset="UTF-8">
@@ -18,7 +17,7 @@ function getForm(){
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/main.css" rel="stylesheet" type="text/css"/>
         <link href="css/table.css" rel="stylesheet" type="text/css"/>
-        <link href="js/main.js" rel="stylesheet" type="text/javascript"/>
+        <link href="js/main.js" rel="script" type="text/javascript"/>
 
         </head>
         <body>
@@ -29,7 +28,7 @@ function getForm(){
         <label for="SearchInput"></label><input type="text" id="SearchInput" placeholder="Suche ...">
         </div>
         <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a>
-                <button id="exportPDfRoom" class="btn">PDF Export</button>
+                <button id="exportPDfRoom" class="btn" onclick="generatePDF()">PDF Export</button>
                 <button id="exportExcelRoom" class="btn">Excel Export</button>
           
         <form action="fileupload" method="post" enctype="multipart/form-data">
@@ -43,6 +42,17 @@ function getForm(){
         <div id="else_text"></div>
         </div>
         <script src="js/main.js" type="text/javascript"></script>
+        <script src="lib/jspdf.plugin.autotable.js" type="text/javascript"></script>
+        <script>
+            function generatePDF() {
+            var doc = new jsPDF("landscape");
+            
+            doc.autoTable({
+                columnStyles: {6: {display: 'none'}},
+                html: '#RoomOverviewTable'});
+            doc.save("KursManagementSystem-Räume.pdf");
+            }
+        </script>
         </body>
         </html>`
 
