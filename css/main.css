@@ -19,7 +19,7 @@
 }
 
 @media screen {
-    input[type=text], select {
+    input[type=text], select, input[type=file] {
       width: 80%;
       padding: 12px 20px;
       margin: 8px 0;
@@ -27,6 +27,10 @@
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+    }
+
+    input[type=file] {
+        width: 23%;
     }
 
     .btn {
@@ -76,6 +80,11 @@
     input[type=text], select {
         width: 80%;
     }
+
+    input[type=file] {
+        width: 60%;
+    }
+
     #btnShowFieldInsertData, #btnInsertData {
         width: 40%;
     }
@@ -91,6 +100,12 @@
     input[type=text], select {
         width: 100%;
     }
+
+
+    input[type=file] {
+        width: 80%;
+    }
+
     #headers {
         display: none;
     }

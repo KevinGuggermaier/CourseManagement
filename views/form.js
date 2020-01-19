@@ -28,12 +28,12 @@ function getForm(){
         <label for="SearchInput"></label><input type="text" id="SearchInput" placeholder="Suche ...">
         </div>
         <a href="/insertNewRoom"><button id="InsertNewRoom" class="btn">Neue Daten hinzufügen</button></a>
-                <button id="exportPDfRoom" class="btn" onclick="generatePDF()">PDF Export</button>
-                <button id="exportExcelRoom" class="btn">Excel Export</button>
+                <button id="exportPDfRoom" class="btn">Als PDF exportieren</button>
+                <button id="exportExcelRoom" class="btn">Als Excel exportieren</button>
           
         <form action="fileupload" method="post" enctype="multipart/form-data">
             <input type="file" name="filetoupload">
-            <input type="submit" value="Import">
+            <input type="submit" value="Importieren" class="btn">
         </form>
         <br>    
     <br>
@@ -43,16 +43,6 @@ function getForm(){
         </div>
         <script src="js/main.js" type="text/javascript"></script>
         <script src="lib/jspdf.plugin.autotable.js" type="text/javascript"></script>
-        <script>
-            function generatePDF() {
-            var doc = new jsPDF("landscape");
-            
-            doc.autoTable({
-                columnStyles: {6: {display: 'none'}},
-                html: '#RoomOverviewTable'});
-            doc.save("KursManagementSystem-Räume.pdf");
-            }
-        </script>
         </body>
         </html>`
 

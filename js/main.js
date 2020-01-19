@@ -238,18 +238,45 @@ function JSONToCSVConvertor() {
         , margins);
 }*/
 
-/*
 function generatePDF() {
-    import jsPDF from 'jspdf';
-    import 'jspdf-autotable';
-    var doc = new jsPDF();
+    let doc = new jsPDF("landscape");
 
-    doc.autoTable({html: '#RoomOverviewTable'});
+    doc.text(20, 20, 'Kurse Management System - Räume');
+
+    let table = document.getElementById("RoomOverviewTable");
+    let newTbl = document.createElement("TABLE");
+    newTbl.hidden = true;
+
+    let rows = table.rows;
+    for(let row in rows) {
+        let newRow = newTbl.insertRow(row);
+        for(let col in rows[row].cells) {
+            let cell = null;
+            if(col < 6) {
+                cell = newRow.insertCell(col);
+                cell.innerText = rows[row].cells[col].innerText;
+            }
+        }
+    }
+    doc.autoTable({
+        showHead: 'everyPage',
+        html: newTbl,
+        didParseCell: function (data) {
+            if (data.row.index === 0) {
+                data.cell.styles.fillColor = [51, 51, 51];
+                data.cell.styles.fontSize = 12;
+                data.cell.styles.textColor = 255;
+            }
+        }
+    });
     doc.save("KursManagementSystem-Räume.pdf");
+
+    newTbl.remove();
+
 }
 
 
 document.getElementById("exportPDfRoom").addEventListener("click", generatePDF);
-*/
+
 
 document.getElementById("exportExcelRoom").addEventListener("click", JSONToCSVConvertor);
