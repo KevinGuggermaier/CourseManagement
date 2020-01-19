@@ -79,7 +79,7 @@ function floor() {
 function shortCut() {
     let value = document.getElementById("ShortCut").value;
 
-    value = value.replace(/[.]/g, "");
+    /*value = value.replace(/[.]/g, "");
 
     switch(value.length){
         case 1:
@@ -90,6 +90,7 @@ function shortCut() {
             }
             break;
         case 2:
+
         case 3:
         case 4:
             if(!value.match(/([a-z,A-Z]{1}[0-9]+)$/)){
@@ -113,13 +114,13 @@ function shortCut() {
             //
             if(!value.match(/([a-z,A-Z]{1})([0-9]{3})([0-9]{1})$/) && value.length > 5){
                 value = null;
-                alert("Unerlaubter Eingabe \n Bsp.: G.100.2");
+                alert("Unerlaubte Eingabe \n Bsp.: G.100.2");
                 callAlert = true;
             }else{
                 value = value.replace(/([a-z,A-Z]{1})([0-9]{3})([0-9]{1})/, "$1.$2.$3");
             }
             break;
-    }
+    }*/
 
     document.getElementById("ShortCut").value = value;
     // [a-z,A-Z].[0-9]*.[0-9]$
@@ -251,11 +252,11 @@ function locationStreet() {
 
 function fOutShortCut(){
     let value = document.getElementById("ShortCut").value;
-    if(value.match(/^([a-z,A-Z].[0-9]{3}.[0-9]{1})$/)|| value.length === 0 || callAlert === true){
+    if((value.match(/^([a-z,A-Z]{2}.[0-9]{3}.[0-9]{1})$/) || value.match(/^([a-z,A-Z].[0-9]{3}.[0-9]{1})$/)) || value.length === 0 || callAlert === true){
         callAlert = false;
         return;
     }
-    if (confirm("Geben Sie eine vollständige Kurzbezeichnung ein [zB.: G.100.1]\n Bei Abbrechen wird der Inhalt gelöscht")) {
+    if (confirm("Geben Sie eine valide Kurzbezeichnung ein [zB.: G.100.1 oder BG.100.3]\n Bei Abbrechen wird der Inhalt gelöscht")) {
         document.getElementById("ShortCut").focus();
         document.getElementById("ShortCut").removeEventListener("focusout", fOutShortCut);
         setTimeout(() => {
